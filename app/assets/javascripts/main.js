@@ -134,7 +134,7 @@ $(function() {
     //   // console.log(city, country)
 
     //     $.ajax({
-    //       url: "http://api.wunderground.com/api/c391db3a2a98fb5a/geolookup/conditions/q/" + state + "/" + city + ".json",
+    //       url: "//api.wunderground.com/api/c391db3a2a98fb5a/geolookup/conditions/q/" + state + "/" + city + ".json",
     //       dataType: "jsonp",
     //       success: function(parsed_json) {
     //         console.log(parsed_json.location)
@@ -180,7 +180,7 @@ $(function() {
     //   // console.log(city, country)
 
     //     $.ajax({
-    //       url: "http://api.wunderground.com/api/c391db3a2a98fb5a/geolookup/conditions/q/" + country + "/" + city + ".json",
+    //       url: "//api.wunderground.com/api/c391db3a2a98fb5a/geolookup/conditions/q/" + country + "/" + city + ".json",
     //       dataType: "jsonp",
     //       success: function(parsed_json) {
     //         console.log(parsed_json.location)
@@ -253,7 +253,7 @@ $(function() {
         autoFocus: true,
         source: function(request, response) {
             $.ajax({
-                url: "http://gd.geobytes.com/AutoCompleteCity",
+                url: "//gd.geobytes.com/AutoCompleteCity",
                 dataType: "jsonp",
                 data: {
                     q: request.term
@@ -429,7 +429,7 @@ $(function() {
             $(".heading").append(city);
 
             $.ajax({
-                url: "http://api.wunderground.com/api/c391db3a2a98fb5a/forecast10day/q/" + lat_result + "," + long_result + ".json",
+                url: "//api.wunderground.com/api/c391db3a2a98fb5a/forecast10day/q/" + lat_result + "," + long_result + ".json",
                 dataType: "jsonp",
                 success: function(data) {
                     for (var i = 0; i < data.forecast.txt_forecast.forecastday.length; i++) {
