@@ -53,9 +53,9 @@
                      <%= fields_for "activity[]", activity do |ff| %>
                        
                         <label>
+                         <%= activity.activity_name %>
                          <%= ff.hidden_field :id%>
                          <%= check_box_tag 'activity_ids[]', activity.id, false %>
-                          <%= activity.activity_name %>
                         </label>
                         <%= image_tag("#{activity.activity_name}.jpg", :class => "activity_image") %>
                       </div>

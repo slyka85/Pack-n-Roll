@@ -19,15 +19,15 @@ class TripsController < ApplicationController
     @trip.end_date = params[:end_date]
     @trip.id = params[:id]
     trip_id = params[:id]
-    @trip.save
-    @activity_ids = params["activity_ids"].map { |aid| aid}
-    @activity_ids.each do |aid|
-       @activity = ActivityItem.find_by_id(aid)
-       @activity.trip_id = Trip.find_by_id(@trip.id).id
-       @trip.activity_item_id = @activity.id
-       @activity.save
-       @trip.save
-     end
+    # @trip.save
+    # @activity_ids = params["activity_ids"].map { |aid| aid}
+    # @activity_ids.each do |aid|
+    #    @activity = ActivityItem.find_by_id(aid)
+    #    @activity.trip_id = Trip.find_by_id(@trip.id).id
+    #    @trip.activity_item_id = @activity.id
+    #    @activity.save
+    #    @trip.save
+    #  end
 
     if @trip.save
       redirect_to(@trip)
