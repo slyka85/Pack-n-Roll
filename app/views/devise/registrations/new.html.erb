@@ -5,12 +5,6 @@
     <title>Sign Up</title>
   </head>
   <body>
-<!--     <style>
-      body {
-      background-image: url("http://www.tochkali.com/sky2.gif");
-      background-size: cover;
-      }
-    </style> -->
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin middle"}) do |f| %>
     <h2 class="text-center">Sign up</h2>
     <%= f.error_notification %>

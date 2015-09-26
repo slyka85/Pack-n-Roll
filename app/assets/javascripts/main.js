@@ -1,5 +1,5 @@
 $(function() {
-    console.log("main js loaded")
+    console.log("main js loaded");
 
  ////////////////////////// CALENDAR DATE PICKER POP UP /////////////////////////
     
@@ -41,7 +41,6 @@ $(function() {
     });
 
 
-
     //////////////////////////////// SCROLL WEATHER //////////////////////////////////
 
     if ($('#results').length) {
@@ -75,21 +74,12 @@ $(function() {
         $("#allCategories").children().fadeOut();
         $("#allCategories").children().each(function() {
             if ($(this).hasClass(category)) {
-
                 $(this).fadeIn();
-
             }
         });
 
     });
 
-
-
-
-    //   $("#custom").click(function() {
-    //   $("#allCategories").children().fadeOut();
-    //   $("#toggledCustom").fadeIn("slow");
-    // });
 
     function createCustomToPack(text) {
         var markup = '<li class="ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" id="item" />' + text + '</label><button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></div></li>';
@@ -104,35 +94,13 @@ $(function() {
         $(this).toggleClass('highlight');
     });
 
-
-
-    ///////////// CHECKBOXES COLOR //////////////////
-    //  $('input:checkbox').change(function(){
-    //     if($(this).is(":checked")) {
-    //      $('input:checkbox').addClass("highlight");
-    //     } else {
-    //        $('input:checkbox').removeClass("highlight");
-    //     }
-    // });
-
-    // if ($('input.checkbox_check').is(':checked')) {
-    //   $(".all_thumbs .thumbnail").css('background','red');
-    // }
-    // $(":checkbox").on('click', function(){
-    //   console.log($(this).parent())
-    //   if($(this).is(":checked")) {
-    //       $(this).parent().toggleClass("highlight");
-    //     } else {
-    //        $('input:checkbox').removeClass("highlight");
-    //     }
-    // });
     /////////////////////////////////// PLACES AUTOCOMPLETE ////////////////////
 
     $(".location").autocomplete({
         autoFocus: true,
         source: function(request, response) {
             $.ajax({
-                url: "https://gd.geobytes.com/AutoCompleteCity",
+                url: "//gd.geobytes.com/AutoCompleteCity",
                 dataType: "jsonp",
                 data: {
                     q: request.term
@@ -320,15 +288,10 @@ $(function() {
                         var dd = today.getDate();
 
                         $(".day" + i).append("<span> " + new_day + "<img src=" + icon + " style='float:right'></span><div style='clear:both'><h6 style='width: 100%; display:block; height: 100px'> " + weatherResult + "</h6></div>");
-
                     }
-
                 }
-            })
-
+            });
         }
-
-
         window.initialize = initialize;
     }
 
