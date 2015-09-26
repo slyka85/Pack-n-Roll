@@ -30289,17 +30289,6 @@ $(function() {
     
     $(".datepicker").datepicker({dateFormat: "yy-mm-dd"});
 
- ////////////////////////// CHOOSING ACTIVITIES /////////////////////////
-
-    $(".activity_image").click(function(){
-        console.log(this)
-        if($(this).css('opacity') == 1){
-            $(this).animate({opacity:0.3}, 1000);
-        } else{
-            $(this).animate({opacity:1}, 1000);
-        }
-    });
-
 
     ////////////////////////// DRAG A TRIP TO TRASH CAN /////////////////////////
 
@@ -30372,11 +30361,30 @@ $(function() {
     }
 
 
-    ////////////////////////////////////// SELECT TILES //////////////////////////
+    ////////////////////////////////////// SELECT TILES and CHOOSE ACTIVITIES //////////////////////////
+
     $(".all_thumbs .thumbnail").click(function() {
-        // console.log(this);
+        console.log(this);
         $(this).toggleClass('highlight');
+        if($(this).css('opacity') == 1){
+            $(this).animate({opacity:0.5}, 1000);
+        } else{
+            $(this).animate({opacity:1}, 1000);
+        }
     });
+
+
+
+ ////////////////////////// CHOOSING ACTIVITIES /////////////////////////
+
+    // $(".activity_image").click(function(){
+    //     console.log(this);
+    //     if($(this).css('opacity') == 1){
+    //         $(this).animate({opacity:0.3}, 1000);
+    //     } else{
+    //         $(this).animate({opacity:1}, 1000);
+    //     }
+    // });
 
     /////////////////////////////////// PLACES AUTOCOMPLETE ////////////////////
 
