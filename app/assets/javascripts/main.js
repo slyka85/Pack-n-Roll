@@ -96,127 +96,6 @@ $(function() {
         $('#customSortable').prepend(markup);
         $('.add-toPack').val('');
     }
-    /////////////////////////////////// RENDERING DEFAULT ITEMS ON A TRIP PAGE////////////////////
-    //  $('#checkbox').empty();
-    // $.ajax({
-    //   url: "/api/default_items",
-    //   success: function(all_items) {
-    //     var template = $('.item-template').html();
-    //     var info = Mustache.render(template, {
-    //       default_items: all_items
-    //     });
-    //     //console.log(info);
-    //     $('#checkbox').append(info);
-    //   }
-    // });
-    //   /////////////////////////////// WEATHER //////////////////////////////////////
-    //   // jQuery(document).ready(function($) {
-    //   // $('#weather').click(function() {
-    //      $('#loader').html('<img id="loader-img" alt="" src="http://i.imgur.com/IUwNLXT.gif" width="30" height="30" align="center" class="displayed"/>').hide().fadeIn("slow");
-    //    var initial_text = $("#query").text();
-
-
-    // if( initial_text.indexOf('United States') >= 0){
-    //   console.log("found US")
-
-    //     // if (initial_text.indexOf(',') > -1){
-    //     //   initial_text.split(',')
-    //     //      console.log(initial_text.indexOf(','))
-    //     //    }
-
-
-    //     var query = $("#query").text().split(', ');
-    //     //console.log(query);
-    //     var city = query.shift();
-    //     var state = query.shift();
-    //     var country = query.shift();
-
-    //   // console.log(city, country)
-
-    //     $.ajax({
-    //       url: "//api.wunderground.com/api/c391db3a2a98fb5a/geolookup/conditions/q/" + state + "/" + city + ".json",
-    //       dataType: "jsonp",
-    //       success: function(parsed_json) {
-    //         console.log(parsed_json.location)
-
-    //           if (typeof parsed_json['location'] == 'undefined') {
-    //          console.log("error")
-
-    //         $('#loader').empty();
-    //         $("#results").append("<h5 id = 'weatherResult'> City Not Found. </h5><h5> Please check the spelling of the DESTINATION and try again.  </h5>");
-    //         $("#weatherResult").hide().show("slow");
-    //         } else {
-
-
-    //         var location = parsed_json['location']['city'];
-
-    //         var weather = parsed_json['current_observation']['weather'];
-    //         var temp = parsed_json['current_observation']['temperature_string'];
-    //         var feelsLike = parsed_json['current_observation']['feelslike_string'];
-    //         var result = "It is " + weather + " in " + location + "." + "<br />" + "Current temperature is: " + temp + "<br />" + "Feels like: " + feelsLike;
-    //         var icon = parsed_json['current_observation']['icon_url'];
-    //         console.log(result);
-    //         console.log("clicked");
-    //         console.log(location)
-    //         $('#loader').empty();
-
-    //         $("#icon").append("<img src=" + icon + ">");
-    //         $("#icon").hide().show("slow");
-
-    //         $("#results").append("<h5 id = 'weatherResult'>" + result + "</h5>");
-    //         $("#weatherResult").hide().show("slow");
-    //        }
-    //       }
-    //     }); //end of ajax
-    // } else
-    // {
-    //   console.log("do nothing")
-
-    //     var query = $("#query").text().split(', ');
-    //     //console.log(query);
-    //     var city = query.shift();
-    //     var country = query.shift();
-
-    //   // console.log(city, country)
-
-    //     $.ajax({
-    //       url: "//api.wunderground.com/api/c391db3a2a98fb5a/geolookup/conditions/q/" + country + "/" + city + ".json",
-    //       dataType: "jsonp",
-    //       success: function(parsed_json) {
-    //         console.log(parsed_json.location)
-
-    //           if (typeof parsed_json['location'] == 'undefined') {
-    //          console.log("error")
-
-    //         $('#loader').empty();
-    //         $("#results").append("<h5 id = 'weatherResult'> City Not Found. </h5><h5> Please check the spelling of the DESTINATION and try again.  </h5>");
-    //         $("#weatherResult").hide().show("slow");
-    //         } else {
-
-
-    //         var location = parsed_json['location']['city'];
-
-    //         var weather = parsed_json['current_observation']['weather'];
-    //         var temp = parsed_json['current_observation']['temperature_string'];
-    //         var feelsLike = parsed_json['current_observation']['feelslike_string'];
-    //         var result = "It is " + weather + " in " + location + "." + "<br />" + "Current temperature is: " + temp + "<br />" + "Feels like: " + feelsLike;
-    //         var icon = parsed_json['current_observation']['icon_url'];
-    //         console.log(result);
-    //         console.log("clicked");
-    //         console.log(location)
-    //         $('#loader').empty();
-
-    //         $("#icon").append("<img src=" + icon + ">");
-    //         $("#icon").hide().show("slow");
-
-    //         $("#results").append("<h5 id = 'weatherResult'>" + result + "</h5>");
-    //         $("#weatherResult").hide().show("slow");
-    //        }
-    //       }
-    //     }); //end of ajax
-    // }
-
-
 
 
     ////////////////////////////////////// SELECT TILES //////////////////////////
@@ -253,7 +132,7 @@ $(function() {
         autoFocus: true,
         source: function(request, response) {
             $.ajax({
-                url: "https://gd.geobytes.com/AutoCompleteCity",
+                url: "//gd.geobytes.com/AutoCompleteCity",
                 dataType: "jsonp",
                 data: {
                     q: request.term
@@ -411,7 +290,7 @@ $(function() {
         function loadScript() {
             var script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyD-7NSPt2Gzjn79uQ-NoKl7xGKc0oO4H54&sensor=false&callback=initialize';
+            script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyD-7NSPt2Gzjn79uQ-NoKl7xGKc0oO4H54&sensor=false&callback=initialize';
             document.body.appendChild(script);
         }
 
@@ -429,7 +308,7 @@ $(function() {
             $(".heading").append(city);
 
             $.ajax({
-                url: "//api.wunderground.com/api/c391db3a2a98fb5a/forecast10day/q/" + lat_result + "," + long_result + ".json",
+                url: "http://api.wunderground.com/api/c391db3a2a98fb5a/forecast10day/q/" + lat_result + "," + long_result + ".json",
                 dataType: "jsonp",
                 success: function(data) {
                     for (var i = 0; i < data.forecast.txt_forecast.forecastday.length; i++) {
