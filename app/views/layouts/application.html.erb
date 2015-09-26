@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= page_title %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick.css"/>
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render "layouts/footer" %>
+    <!-- script src="//code.jquery.com/jquery-2.1.4.js"></script -->
+    <!-- script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script -->
+    <!-- script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script -->
+    <!-- script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.0.0/mustache.js"></script -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick.min.js"></script>
+  </body>
+</html>

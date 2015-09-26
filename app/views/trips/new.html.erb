@@ -1,0 +1,87 @@
+<% content_for(:page_title) { 'Create your trip!' } %>
+<% if current_user %>
+  <div class="jumbotron text-center" style="margin-bottom: 0px;">
+    <h3>Let's add your trip first</h3>
+    <h5>Fill out the fields below, then choose activities and click NEXT to get the suggested Packing List</h5>
+
+  </div>
+  <hr>
+
+<!--   <div class="row"> -->
+    <div class="col-sm-4">
+    
+      <p class="flash">Seems like location does not exist. Please check your spelling or select from a suggested list</p>
+      <% if flash[:alert] %>
+        <p class="flash-error"><%= flash[:alert] %></p>
+      <% end %>
+      <% if flash[:notice] %>
+        <p class="flash-notice"><%= flash[:notice] %></p>
+      <% end %>
+  
+      <%= image_tag 'pick_destination.gif' %>
+    <br>
+    <hr>
+      <div class="form-group">
+        <label for="current">What is your current location?</label>
+        <input type="text" id="query" class="form-control location" placeholder="Enter a location" id="log">
+      </div>
+      <form action="/trips" method="post">
+        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+        <input type="hidden" value="<%= :id %>" />
+        <div class="form-group">
+          <label for="destination">What is your Destination?</label>
+          <input type="text" name="destination" class="form-control location" placeholder="Enter a location" id="log">
+        </div>
+        <div class="form-group">
+          <label for="date">Start Date</label>
+          <input class="datepicker form-control date" name="start_date" placeholder="Select Start Date">
+        </div>
+        <div class="form-group">
+          <label for="date">End Date</label>
+          <input class="datepicker form-control date" name="end_date" placeholder="Select End Date">
+        </div>
+        <button type="submit", class="btn btn-weather location next-button">NEXT</button>
+ 
+    </div>
+    <div class="col-sm-8">
+            <div id="allCategories">
+            <div class="all_thumbs" id="showToiletries">
+            <% ActivityItem.all.sort_by { |d| d.activity_name }.each do |activity| %>
+
+                  <div class="col-sm-4">
+                    <div class="thumbnail btn activities">
+                     <%= fields_for "activity[]", activity do |ff| %>
+                       
+                        <label>
+                         <%= ff.hidden_field :id%>
+                         <%= check_box_tag 'activity_ids[]', activity.id, false %>
+                          <%= activity.activity_name %>
+                        </label>
+                        <%= image_tag("#{activity.activity_name}.jpg", :class => "activity_image") %>
+                      </div>
+                    </div>
+                    <% end %>
+                    <% end %>
+            </div>
+      </div>
+    </div>
+         </form>
+<!--   </div> -->
+<% else %>
+  <div class="jumbotron text-center">
+    <h2><img style="max-width:200px;" src="http://i.imgur.com/pjs3K1M.jpg">TRAVEL PACKING ASSISTANT</h2>
+    <p>This is an application for generating a personalized packing list with custom items for packing</p>
+  </div>
+  <img id = "homepic" src="https://blogdotgofoxdotcom.files.wordpress.com/2014/10/cropped-cropped-world-travel1.jpg">
+  <div class="text-center">
+    <div style="height: 400px"></div>
+    <div>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-primary btn-lg" %>
+      or
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+    </div>
+  </div>
+<% end %>
+
+
+

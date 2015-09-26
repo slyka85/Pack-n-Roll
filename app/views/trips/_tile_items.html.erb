@@ -1,0 +1,60 @@
+<br>
+<ul id="allCategories" style="display:none;">
+  <div class="all_thumbs TOILETRIES" id="showToiletries">
+    <% @default_toiletries_items.each do |item| %>
+      <div class="col-sm-2">
+        <div class="thumbnail btn">
+          <%= hidden_field_tag 'false_item_ids[]', item.id %>
+          <%= check_box_tag 'item_ids[]', item.id, @default_toiletries_items.include?(item.id), :id => dom_id(item) %>
+          <h6> <%= item.item %> </h6>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="all_thumbs CLOTHES" id="showClothes">
+    <% @default_clothes_items.each do |item| %>
+      <div class="col-sm-2">
+        <div class="thumbnail btn">
+          <%= check_box_tag 'item_ids[]', item.id, false %>
+          <h6> <%= item.item %> </h6>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="all_thumbs PAPERWORK" id="showPaperwork">
+    <% @default_paperwork_items.each do |item| %>
+      <div class="col-sm-2">
+        <div class="thumbnail btn">
+          <h6> <%= item.item %> </h6>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="all_thumbs ELECTRONICS" id="showElectronics">
+    <% @default_electronics_items.each do |item| %>
+      <div class="col-sm-2">
+        <div class="thumbnail btn">
+          <h6> <%= item.item %> </h6>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="all_thumbs CARRY-ON" id="showCarryon">
+    <% @default_carryon_items.each do |item| %>
+      <div class="col-sm-2">
+        <div class="thumbnail btn">
+          <h6> <%= item.item %> </h6>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="all_thumbs MISC" id="showMisc">
+    <% @default_misc_items.each do |item| %>
+      <div class="col-sm-2">
+        <div class="thumbnail btn">
+          <h6> <%= item.item %> </h6>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</ul>

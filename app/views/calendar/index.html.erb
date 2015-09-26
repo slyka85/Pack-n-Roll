@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CALENDAR</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <h2>TRIPS CALENDAR</h2>
+    </div>
+    <div id="trips">
+      <h2 id="month">
+        <%= link_to "<", date: @date.prev_month %>
+        <%= @date.strftime("%B %Y") %>
+        <%= link_to ">", date: @date.next_month %>
+      </h2>
+      <%= calendar @date do |date| %>
+      <%= date.day %>
+      <% if @trips_by_date[date] %>
+      <ul>
+        <% @trips_by_date[date].each do |trip| %>
+        <li><%= link_to trip.destination, trip %></li>
+        <% end %>
+      </ul>
+      <% end %>
+      <% end %>
+    </div>
+<br>
+      <%=link_to 'ADD A TRIP'.html_safe, "/", class: "btn btn-weather location" %>
+  </body>
+</html>

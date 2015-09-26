@@ -1,0 +1,85 @@
+<!-- hidden page -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Create Packing List</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  </head>
+  <body>
+    <!--  TO PACK PART -->
+    <div class="jumbotron text-center">
+      <h2 class ="text-center">Create A Packing List</h2>
+      <p>You can choose items from the suggested list or add your own items below!</p>
+      <!--         <form action="/api/default_trips" method="post"> -->
+      <div class="text-center">
+        <div class="btn-group btn-group-info">
+          <button class="btn btn-info" type="button">CHOOSE YOUR TRIP</button>
+          <button data-toggle="dropdown" class="btn btn-info dropdown-toggle" type="button"><span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+        <button type="submit", class="btn btn-edit location">SAVE PACKING LIST TO THE TRIP</button>
+      </div>
+      <br><br>
+      <!--       </form> -->
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="toPacklist not-packed">
+          <h3 class = "text-center">ITEMS TO PACK</h3>
+          <hr>
+          <input type="text" class="form-control add-toPack" placeholder="Add your own item to the list">
+          <img id="checkAll" src="http://activerain.trulia.com/image_store/uploads/7/5/4/1/2/ar12675014621457.gif" height="100px" width="100px"> <span id ="markall">Click to mark all as PACKED!</span>
+          <hr>
+          <div class="todo-footer">
+            <strong><span class="count-todos"></span></strong> Items Left to pack
+          </div>
+          <br>
+          <!--         <button id="checkAll" class="btn btn-success">Mark all as Packed</button> -->
+          <script class="item-template" type="text/template">
+            {{#default_items}}
+            <ul id="sortable" class="list-unstyled">
+                <li class="ui-state-default">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="" id="item">{{item}}</label>
+                     </div>
+                </li>
+                {{/default_items}}
+            </ul>
+          </script>
+          <div id="checkbox">
+            <label></label>
+          </div>
+          </li>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="toPacklist">
+          <h3 class = "text-center">PACKED ITEMS</h3>
+          <hr />
+          <ul id="done-items" class="list-unstyled">
+            <li> This packing List
+              <button class="remove-item btn btn-default btn-xs pull-right">
+              <span class="glyphicon glyphicon-remove"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--   END OF TO PACK -->
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.0.0/mustache.js"></script>
+  </body>
+</html>

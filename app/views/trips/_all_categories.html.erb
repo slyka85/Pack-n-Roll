@@ -1,0 +1,138 @@
+<!-- <ul id="allCategories">
+
+
+    <div id = "showToiletries" class= "TOILETRIES">
+        <ul id="sortable" class="list-unstyled">
+        <% @default_toiletries_items.each do |item| %>
+            <li class="ui-state-default">
+            <div class="checkbox">
+            <label>
+            <%= hidden_field_tag 'item_ids[]', true %>
+            <%= check_box_tag 'item_ids[]', item.id, true %>
+            <%= item.item %>
+            <%= item.id %>
+            </label>
+            <button class="remove-item btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+            </button>
+            <button class="btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+            </div>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+
+
+    <div id = "showClothes" class= "CLOTHES">
+    <% @default_clothes_items.each do |item| %>
+        <ul id="sortable" class="list-unstyled">
+            <li class="ui-state-default">
+            <div class="checkbox">
+            <label>
+            <%= check_box_tag 'item_ids[]', item.id, true %>
+            <%= item.item %>
+            <%= item.id %>
+            </label>
+            <button class="remove-item btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+            </button>
+            <button class="btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+            </div>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+
+    <div id = "showPaperwork" class= "PAPERWORK">
+    <% @default_paperwork_items.each do |item| %>
+        <ul id="sortable" class="list-unstyled">
+            <li class="ui-state-default">
+            <div class="checkbox">
+            <label>
+            <%= check_box_tag 'item_ids[]', item.id, false %>
+            <%= item.item %>
+            <%= item.id %>
+            </label>
+            <button class="remove-item btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+            </button>
+            <button class="btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>      
+            </div>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+
+    <div id = "showElectronics" class= "ELECTRONICS">
+    <% @default_electronics_items.each do |item| %>
+        <ul id="sortable" class="list-unstyled">
+            <li class="ui-state-default">
+            <div class="checkbox">
+            <label>
+            <%= check_box_tag 'item_ids[]', item.id, false %>
+            <%= item.item %>
+            <%= item.id %>            
+            </label>
+            <button class="remove-item btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+            </button>
+            <button class="btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+            </div>
+            </li>
+        <% end %>
+        </ul>
+    </div> 
+
+    <div id = "showCarryon" class= "CARRY-ON">
+    <% @default_carryon_items.each do |item| %>
+        <ul id="sortable" class="list-unstyled">
+            <li class="ui-state-default">
+            <div class="checkbox">
+            <label>
+            <%= check_box_tag 'item_ids[]', item.id, false %>
+            <%= item.item %>
+            <%= item.id %>            
+            </label>
+            <button class="remove-item btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+            </button>
+            <button class="btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+            </div>
+            </li>
+        <% end %>
+        </ul>
+    </div>  
+
+    <div id = "showMisc" class= "MISCELLANEOUS">
+    <% @default_misc_items.each do |item| %>
+        <ul id="sortable" class="list-unstyled">
+            <li class="ui-state-default">
+            <div class="checkbox">
+            <label>
+            <%= check_box_tag 'item_ids[]', item.id, false %>
+            <%= item.item %>
+            <%= item.id %>            
+            </label>
+            <button class="remove-item btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+            </button>
+            <button class="btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+            </div>
+            </li>
+        <% end %>
+        </ul>
+    </div>                       
+
+</ul> -->

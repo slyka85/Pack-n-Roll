@@ -1,0 +1,34 @@
+<div class="col-md-4">
+  <h3> YOUR TRIP INFORMATION </h3>
+  <h4 style="display:inline">Destination: &nbsp;</h4>
+  <h5  id="query" style="display:inline"><%=@trip.destination%> &nbsp;</h5>
+  <br>
+  <h4 style="display:inline">Start Date: &nbsp; &nbsp; </h4>
+  <h5 style="display:inline"><%=@trip.start_date %></h5>
+  <br>
+  <h4 style="display:inline">End Date: &nbsp; &nbsp; &nbsp;</h4>
+  <h5 style="display:inline"><%=@trip.end_date %></h5>
+  <br>
+  <br>
+  <%=link_to '<i class="fa fa-pencil-square-o"></i> EDIT INFO'.html_safe, edit_trip_path, class: "btn btn-primary" %>
+</div>
+<div id="map-canvas" style="width: 750px; height: 400px;">
+</div>
+<hr/>
+<div class="text-center">
+  <h3 class="heading"> 10 DAY WEATHER:  </h3>
+  <div id = "results">
+    <div class="weather day0"></div>
+    <div class="weather day2"></div>
+    <div class="weather day4"></div>
+    <div class="weather day6"></div>
+    <div class="weather day8"></div>
+    <div class="weather day10"></div>
+    <div class="weather day12"></div>
+    <div class="weather day14"></div>
+    <div class="weather day16"></div>
+    <div class="weather day18"></div>
+  </div>
+</div>
+</div>
+<hr />

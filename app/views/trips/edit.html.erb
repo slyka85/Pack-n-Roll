@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Edit Trip</title>
+  </head>
+  <body>
+    <div class="container-fluid" style="margin-left: 115px;">
+      <h3> EDIT TRIP INFORMATION</h3>
+      <% if @trip.errors.count > 0 %>
+        <p class="error">Your Trip had the following errors: <%= @trip.errors.full_messages.join(', ') %> </p>
+      <% end %>
+      <%= form_for @trip do |form| %>
+        <p> <%=form.label :destination  %> <br />
+          <%=form.text_field :destination %>
+        </p>
+        <p> <%=form.label :start_date  %> <br />
+          <%=form.date_field :start_date  %>
+        </p>
+        <p> <%=form.label :end_date  %> <br />
+          <%=form.date_field :end_date %>
+        </p>
+        <%= form.submit "UPDATE MY TRIP", class: "btn btn-weather" %>
+      <% end %>
+      <br />
+      <%= link_to "CANCEL", :back %>
+    </div>
+  </body>
+</html>

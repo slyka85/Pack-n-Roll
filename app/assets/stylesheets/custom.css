@@ -1,0 +1,15 @@
+body {
+font-family: 'Raleway', cursive !important;
+}
+/*
+h1, h2, h3 ,h4 {
+font-family: 'Raleway', cursive !important;
+}*/
+
+
+media="all"
+.btn-primary {
+  color: #fff;
+  background-color: #42CAAB !important;
+  border-color: #357ebd;
+}

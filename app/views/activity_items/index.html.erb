@@ -1,0 +1,68 @@
+      <div class="row">
+
+      <div class="jumbotron text-center">
+        <h2 class ="text-center">CHOOSE ACTIVITIES</h2>
+        <p>You can choose activities from the suggested list of items</p>
+
+      </div>
+
+
+
+
+ <div class ="row"> 
+
+
+          <fieldset>
+            <legend> 
+              All Categories
+            </legend>
+            <ul id="allCategories">
+              <div class="all_thumbs" id="showToiletries">
+              <% @trip.trip_default_items.each do |trip_default_item| %>
+             <!--    <li> -->
+              <% if trip_default_item.checked == true %>
+
+                <div class="col-sm-2">
+                
+          <div class="thumbnail btn highlight">
+              <%= f.fields_for "trip_default_items[]", trip_default_item do |ff| %>
+                  <%= ff.hidden_field :id %>
+                  <%= ff.check_box :checked %>
+                  <label>
+                  <%= trip_default_item.default_item.item %>  
+                  </label>
+                  </div>
+                 
+                  </div>
+                   <% end %>
+                       <% else %>
+                <div class="col-sm-2">
+          <div class="thumbnail btn">
+              <%= f.fields_for "trip_default_items[]", trip_default_item do |ff| %>
+                  <%= ff.hidden_field :id %>
+                  <%= ff.check_box :checked %>
+                  <label>
+                  <%= trip_default_item.default_item.item %>  
+                  </label>
+                  </div>
+                 
+                  </div>
+
+           <% end %>
+
+              <% end %>
+           <!--      </li> -->
+              <% end %>  
+              </div>
+            </ul>
+          </fieldset>
+          <hr>
+          <br>
+          <div class = "text-center">
+        <button class="btn btn-edit location"> SAVE PROGRESS </button>
+        </div>
+     
+
+    </div>
+
+      </div>

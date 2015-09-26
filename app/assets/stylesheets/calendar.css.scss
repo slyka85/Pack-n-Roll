@@ -1,0 +1,55 @@
+
+body {
+font-family: 'Raleway', cursive;
+} 
+#trips .calendar {
+  border-collapse: collapse;
+  width: 100%;
+
+  td, th {
+   font-family: 'Raleway', cursive;
+    font-size: 10px;
+    padding: 6px;
+    border: 1px solid black;
+  }
+
+  th {
+    background: rgba(22, 160, 133,1.0);
+    color: white;
+    text-align: center;
+    font-size: 130%;
+    width: 14.2857142857143%;
+  }
+
+  td {
+    background: #FFF;
+    color: #777;
+    height: 80px;
+    vertical-align: top;
+    font-size: 16px;
+  }
+
+  .notmonth, .notmonth a { color: #CCC; }
+  .today { background-color: #D7F2FF; }
+}
+
+a {
+  color: rgba(211, 84, 0,1.0);
+}
+#trips #month {
+  margin: 0;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 30px;
+  color: rgba(211, 84, 0,1.0);
+  a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: #999;
+  }
+}
+
+#trips ul {
+  font-size: 16px;
+  padding-left: 20px;
+}

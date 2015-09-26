@@ -1,0 +1,80 @@
+      
+<div class="col-md-6">
+  <div class="toPacklist not-packed">
+    <div class = "notPrint">
+      <div class="text-center">
+      </div>
+    </div>
+    <h3 class = "text-center">ITEMS TO PACK</h3>
+    <hr>
+    <br>
+    <!--             <div class = "text-center notPrint" id="catButtons">
+             <button class="btn btn-info btn-xs highlight" id="toiletries">ALL</button>
+            <button class="btn btn-info btn-xs" id="toiletries">TOILETRIES</button>
+            <button class="btn btn-info btn-xs" id="clothes">CLOTHES</button>
+            <button class="btn btn-info btn-xs" id="paperwork">PAPERWORK</button>
+            <button class="btn btn-info btn-xs" id="electronics">ELECTRONICS</button>
+            <button class="btn btn-info btn-xs" id="carry-on">CARRY-ON</button>
+            <button class="btn btn-info btn-xs" id="misc">MISC</button>
+            </div> -->
+    <script class="item-template" type="text/template">
+      <div class="text-center">
+            <h6> Click on the category to get suggested items </h6>
+            </div>
+              <%= form_for :default_items_trips, :url => {:action => "create_default_items_trip"} do |f| %>
+      <!--       <%= render "all_categories" %> -->
+            <%= render "tile_items" %>
+                        <%= f.submit "Save Trip Items"%>
+              <% end %>
+    </script>
+    <div id="checkbox">
+    </div>
+  </div>
+  <div id = "toggledCustom" style="display: none">
+    <ul id="customSortable" class="list-unstyled">
+      <li class="ui-state-default">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="item[]" value="" id="item">
+          </label>
+        </div>
+      </li>
+    </ul>
+    <input type="text" id = "wide" class="form-control add-toPack" placeholder="Add your own item to the list">
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="toPacklist">
+    <h3 class = "text-center">PACKED ITEMS</h3>
+    <hr />
+    <br>
+    <div class="text-center">
+      <button class="btn btn-info btn-xs highlighted" id="clothes">PACKED ITEMS</button>
+      <h6><strong><span class="count-todos"></span></strong> Items left to pack </h6>
+    </div>
+    <ul id="done-items" class="list-unstyled">
+      <li><input type="checkbox" checked> This packing List
+        <button class="remove-item btn btn-default btn-xs pull-right">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        <button class="btn btn-default btn-xs pull-right">
+          <span class="glyphicon glyphicon-arrow-left"></span>
+        </button>
+      </li>
+    </ul>
+    <br>
+    <img id="checkAll" class = "notPrint" src="http://activerain.trulia.com/image_store/uploads/7/5/4/1/2/ar12675014621457.gif" height="60px" width="60px"> <span class = "notPrint" id ="markall">Click to mark all as PACKED!</span>
+    <br>
+  </div>
+</div>
+</div>
+<hr>
+<br>
+<div class="todo-footer">
+</div>
+<br>
+<hr>
+<div class = "text-center notPrint">
+  <button class="btn btn-success btn-m" id="custom"><span class="glyphicon glyphicon-arrow-down"></span>ADD CUSTOM</button>
+</div>
+<!--   END OF TO PACK -->

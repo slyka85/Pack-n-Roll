@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+  </head>
+  <body>
+    <% if current_user %>
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-offset" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <%= link_to 'HOME'.html_safe, root_path, class: "navbar-brand" %>
+          <%= link_to 'ADD TRIP'.html_safe, root_path, class: "navbar-brand" %>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "MY CALENDAR", calendar_path %></li>
+            <li><%= link_to "MY TRIPS", trips_path %></li>
+            <li><%= link_to "ACCOUNT SETTINGS", edit_user_registration_path %></li>
+            <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <% end %>
+          </ul>
+        </div>
+        <!-- end of navbar-collapse -->
+      </div>
+      <!-- end of container-fluid -->
+    </nav>
+  </body>
+</html>

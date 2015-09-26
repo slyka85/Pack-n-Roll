@@ -1,0 +1,72 @@
+<% content_for(:page_title) { 'Your Trip' } %>
+<div class="notPrint">
+  <div class="row">
+    <div class="jumbotron text-center">
+      <h2 class ="text-center">CREATE A PACKING LIST FOR THE TRIP</h2>
+      <p>You can choose items from the suggested list or add your own items below!</p>
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+    </div>
+    <div class="text-center notPrint">
+      <img src="https://lh5.ggpht.com/QDPh6BDfY_9LtBaTtdwUzthYHXh3EcVqZy7L1X7-z_OComHq38lOJPI1-jTCmj7CU59z=w300" height="100px" width="100px">
+      <form>
+        <input type="button" id="notPrint" class="btn btn-edit location" value="PRINT YOUR PACKING LIST" onClick="window.print()">
+      </form>
+      <br>
+    </div>
+  </div>
+  <div class ="row">
+<!--    render 'weather_map' -->
+       <%= image_tag 'http://www.unmissableprizes.com/wp-content/uploads/2011/06/holiday-packing1-207x3001.jpg' %>
+
+
+       <br>
+    <br> <br>
+    <br>
+    <%= form_for(@trip, url: update_default_items_trip_path(@trip), method: :put) do |f| %>
+      <% categories = @trip.trip_default_items.group_by{|tdi| tdi.default_item.category } %>
+      <% categories.each do |category_name, trip_default_items| %>
+        <fieldset>
+          <legend>
+            <%= category_name %>
+          </legend>
+          <div id="allCategories">
+            <div class="all_thumbs" id="showToiletries">
+              <% trip_default_items.sort_by { |d| d.default_item.item }.each do |trip_default_item| %>
+                <% if trip_default_item.checked == true %>
+                  <div class="col-sm-2">
+                    <div class="thumbnail btn highlight">
+                      <%= f.fields_for "trip_default_items[]", trip_default_item do |ff| %>
+                        <%= ff.hidden_field :id %>
+                        <%= ff.check_box :checked %>
+                        <label>
+                          <%= trip_default_item.default_item.item %>
+                        </label>
+                      </div>
+                    </div>
+                  <% end %>
+                <% else %>
+                  <div class="col-sm-2">
+                    <div class="thumbnail btn">
+                      <%= f.fields_for "trip_default_items[]", trip_default_item do |ff| %>
+                        <%= ff.hidden_field :id %>
+                        <%= ff.check_box :checked %>
+                        <label>
+                          <%= trip_default_item.default_item.item %>
+                        </label>
+                      </div>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </fieldset>
+      <% end %>
+      <hr>
+      <br>
+      <div class = "text-center">
+        <button class="btn btn-edit location"> SAVE PROGRESS </button>
+      </div>
+    <% end %>
+  </div>
+</div>
