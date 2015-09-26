@@ -19,7 +19,6 @@
 #   	end
 
 # 	  def create
-# 	  	binding.pry
 # 	  	@trip = current_user.trips.new
 # 	    # @trip = Trip.new
 # 	    @trip.user_id = current_user.id

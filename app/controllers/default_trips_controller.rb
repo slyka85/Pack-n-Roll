@@ -25,7 +25,6 @@ module Api
     end
 
     def create
-      # binding.pry
       @default_trip = DefaultTrip.new(default_trip_params)
       @default_trip.save
       redirect_to(@default_trip)

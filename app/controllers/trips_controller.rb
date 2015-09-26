@@ -12,7 +12,6 @@ class TripsController < ApplicationController
   end
 
   def create
-    binding.pry
     @trip = Trip.new(params[:trip])
     @trip.user_id = current_user.id
     @trip.destination = params[:destination]
@@ -21,10 +20,8 @@ class TripsController < ApplicationController
     @trip.id = params[:id]
     trip_id = params[:id]
     @trip.save
-    binding.pry
     @activity_ids = params["activity_ids"].map { |aid| aid}
     @activity_ids.each do |aid|
-      binding.pry
        @activity = ActivityItem.find_by_id(aid)
        @activity.trip_id = Trip.find_by_id(@trip.id).id
        @trip.activity_item_id = @activity.id
@@ -125,7 +122,6 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    # binding.pry
     @trip = Trip.find(params[:id])
     @trip.destroy
     redirect_to trips_path
@@ -133,7 +129,6 @@ class TripsController < ApplicationController
   end
 
   def delete_droppable_trip
-    # binding.pry
      @trip = Trip.find(params[:id])
     @trip.destroy
     render nothing: true
