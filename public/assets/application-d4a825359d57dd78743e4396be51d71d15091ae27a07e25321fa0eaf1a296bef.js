@@ -30413,6 +30413,26 @@ $(function() {
         minLength: 3
     });
 
+/////////////////////////////   CURRENT LOCATION BY IP    /////////////////////////
+  window.onload = getCurrentLocation();
+function getCurrentLocation() {
+ var YOUR_KEY = "9ec04c68eba7c73852078ec8db83aea4b4a44537b05181023546ed701667f5af";
+ var theURL = "//api.ipinfodb.com/v3/ip-city/?key=" + YOUR_KEY + "&format=json&callback=?";
+
+ $.ajax({
+        url: theURL,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        method: 'GET',
+        success: function(data) {
+        var cur_city = data.cityName;
+        var cur_region = data.regionName;
+        var cur_country = data.countryName;
+        console.log(cur_city, cur_region, cur_country);
+        $('#query').val(cur_city + ", " + cur_region + ", " + cur_country);
+        }
+    });
+}
 
     //////////////////////////////////////// To PACK ////////////////////////////
     // countTodos();
