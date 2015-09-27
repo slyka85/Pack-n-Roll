@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  
+  root 'trips#new'
 
   # get '/test_page' => 'test_page#index'
   # post '/trips/:id', to: 'trips#create_default_items_trip', as: :create_default_items_trip
@@ -27,5 +29,4 @@ Rails.application.routes.draw do
     resources :trips
   end
 
-  root 'trips#new'
 end

@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Edit Trip</title>
-  </head>
-  <body>
+<% content_for(:page_title) { "EDIT TRIP" } %>
     <div class="container-fluid" style="margin-left: 115px;">
       <h3> EDIT TRIP INFORMATION</h3>
       <% if @trip.errors.count > 0 %>
@@ -25,5 +19,4 @@
       <br />
       <%= link_to "CANCEL", :back %>
     </div>
-  </body>
-</html>
+
