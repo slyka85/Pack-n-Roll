@@ -3,7 +3,7 @@
 <% content_for(:page_title) { "ALL TRIPS" } %>
 
 <div class="jumbotron text-center">
-  <h2 style="display:inline"> TOTAL TRIPS: </h2>
+  <h2 style="display:inline"> TOTAL TRIPS PLANNED: </h2>
   <h2 style="display:inline" id="count-trips"></h2>
    <%= image_tag 'trash.jpg', id: 'trash' %>
    <div id="trash-bubble">
@@ -15,7 +15,7 @@
 
 
 
-  <% @trips.each do |trip| %>
+  <% current_user.trips.each do |trip| %>
     <div class="col-xs-18 col-sm-3 col-md-4 stack" id="tripLi" data-id="<%= trip.id %>">
       <br>
       <div class="thumbnail text-center trip_card">

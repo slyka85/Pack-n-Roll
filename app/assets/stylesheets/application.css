@@ -112,7 +112,8 @@ body {
     color: white;
   }
  .next-button {
-  width: 100%;
+  height: 50px !important; 
+  width: 50%;
   background-color: #00BCD4 !important;
  }
 /*  .location .date {

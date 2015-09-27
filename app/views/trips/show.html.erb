@@ -17,9 +17,16 @@
   </div>
   <div class ="row">
    <%= render 'weather_map' %>
-       <br>
-    <br> <br>
-    <br>
+       <br> <br> <br> <br>
+       <div class="row">
+
+         <h3>Activities chosen for this trip:</h3>
+         <% @activity_chosen.each do |ac| %>
+          <%= ac.activity_name %>,
+          <% end %>
+
+         <br><hr>
+       </div>
     <%= form_for(@trip, url: update_default_items_trip_path(@trip), method: :put) do |f| %>
       <% categories = @trip.trip_default_items.group_by{|tdi| tdi.default_item.category } %>
       <% categories.each do |category_name, trip_default_items| %>
