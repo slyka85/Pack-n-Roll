@@ -3,7 +3,7 @@
 <div class="jumbotron text-center">
   <h2 style="display:inline"> TOTAL TRIPS: </h2>
   <h2 style="display:inline" id="count-trips"></h2>
-  <img id="trash" src="https://40.media.tumblr.com/91d06c61fccaaf1f441f26506262c6c3/tumblr_no6kleCLtL1rijzg7o1_400.jpg"/>
+   <%= image_tag 'trash.jpg', id: 'trash' %>
 </div>
 <div class="row trips_container">
   <% @trips.each do |trip| %>
@@ -18,10 +18,10 @@
       <!-- TODO: Remove ID -->
       <div id="count-trips" class="caption">
         <%= link_to edit_trip_path(trip) do %>
-          <img class="edit_icon"  src="//cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/edit-notes.png" />
+        <%= image_tag 'small_edit.png', class: 'edit_icon' %>
         <% end %>
         <%= link_to trip_path(trip), method: :delete, data: { confirm: 'Are you sure you want to permanently delete this trip?' } do %>
-          <img class="delete_icon" src="//cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons-256/firey-orange-jelly-icons-business/079927-firey-orange-jelly-icon-business-trashcan3.png"/>
+          <%= image_tag 'small_delete.png', class: 'delete_icon' %>
         <% end %>
       </div>
     </div>

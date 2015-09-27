@@ -23,8 +23,8 @@
     <br>
     <hr>
       <div class="form-group">
-        <label for="current">What is your current location?</label>
-        <input type="text" id="query" class="form-control location" placeholder="Enter a location" id="log">
+        <label for="current">Looks like your current location is:</label>
+        <input type="text" id="query" class="form-control location" placeholder="Enter a location">
       </div>
       <form action="/trips" method="post">
         <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
