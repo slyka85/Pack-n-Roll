@@ -19,25 +19,34 @@
 */
 
 
-.jumbotron {
-  margin-top: 80px;
-  margin-bottom: 1px;
-/*  padding-left: 0px;*/
-  }
-.container {
-  margin-bottom: 50px;
+
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
 }
 
-  .displayed {
+/*.jumbotron {
+  margin-top: 80px;
+  margin-bottom: 1px;
+  }*/
+
+.container {
+  min-height:100% !important;
+  position:relative !important;
+}
+.content{
+    margin-top: 8em;
+    margin-bottom: 5em;
+    height: 100%;
+  /*  padding-bottom:50px;*/
+}
+/*  .displayed {
     display: block;
     margin-left: auto;
     margin-right: auto
-  }
-
-  body {
-/*    padding-bottom: 70px;*/
-    /*font-family: 'Raleway', cursive !important;*/
-  }
+  }*/
 
   .form-signin {
     max-width: 330px;
@@ -105,10 +114,10 @@
   width: 100%;
   background-color: #00BCD4 !important;
  }
-  .location .date {
-/*    max-width: 500px;*/
-  }
-  .container .jumbotron {
+/*  .location .date {
+    max-width: 500px;
+  }*/
+ .container .jumbotron {
     color: rgb(35, 115, 60);
     background-color: white;
     padding-top: 1px;
@@ -140,8 +149,6 @@
   background: rgba(231, 76, 60, 0.8);
   color: white;
 }
-
-
 
 .todolist{
   background-color:#FFF;
@@ -195,11 +202,11 @@ li.ui-state-default:last-child{
   }
 }
 
-#wide {
+/*#wide {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
-}
+}*/
 
 
 #count-trips {
@@ -314,7 +321,7 @@ input[type="checkbox"]:checked + label {
 
 #trash {
   position: fixed;
-  bottom: 40px;
+  bottom: 100px;
   right: 20px; 
   width: 150px;
   height: 150px;
@@ -326,10 +333,21 @@ input[type="checkbox"]:checked + label {
   margin-bottom: 1px !important;
 }
 .navbar {
-  margin-bottom: 0px !important;
-  border-radius: 0px !important;
+/*  margin-bottom: 0px !important;
+  border-radius: 0px !important;*/
 /*  position: fixed !important;
   width: 100%;*/
+}
+#home {
+    padding-top: 5px;
+}
+.footer{
+  background-color: black;
+  width:100%;
+/*  height:100px;*/
+  position:relative;
+/*  bottom:0;
+  left:0;*/
 }
 .flash, .flash-error
 {
