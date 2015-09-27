@@ -3,6 +3,14 @@ class TripsController < ApplicationController
 
   def index
     @trips = Trip.where(:user_id == current_user.id)
+    @trips_by_date = @trips.group_by{|x| x.start_date.to_date} 
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @color = "#" + "%06x" % (rand * 0xffffff)
+    # respond_to do |format| 
+    #   format.html
+    #   format.json { render :json => @trips } 
+    # end
+ 
   end
 
   def update_default_items

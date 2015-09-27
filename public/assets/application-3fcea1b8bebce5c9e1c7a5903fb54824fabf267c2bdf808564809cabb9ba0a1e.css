@@ -35,6 +35,8 @@ body {
 .container {
   min-height:100% !important;
   position:relative !important;
+/*  margin-right: 40px !important;
+  margin-left: 300px !important;*/
 }
 .content{
     margin-top: 8em;
@@ -217,16 +219,14 @@ li.ui-state-default:last-child{
 ul { padding-left:20px; list-style-type: none; }
 li.unchecked { margin-bottom:10px; }
 li.unchecked:before {
-  font-family: 'FontAwesome';
-  content: "\f096";
+
   margin:0 5px 0 -15px;
 }
 
 ul { padding-left:20px; list-style-type: none; }
 li.checked { margin-bottom:10px; }
 li.checked:before {
-  font-family: 'FontAwesome';
-  content: "\f046";
+
   margin:0 5px 0 -15px;
 }
 
@@ -303,9 +303,12 @@ input[type="checkbox"]:checked + label {
 }
 .stack{
   border:1px solid black;
-  width: 25% !important;
-  margin: 25px;
+  width: 30% !important;
+  margin: 10px;
 }
+/*#tripLi {
+    padding: 6px;
+}*/
 .edit_icon {
   float:left;
   width: 40px;
@@ -321,10 +324,10 @@ input[type="checkbox"]:checked + label {
 
 #trash {
   position: fixed;
-  bottom: 100px;
-  right: 20px; 
   width: 150px;
   height: 150px;
+  bottom: 100px;
+  left: 10px; 
 }
 .trip_card_title {
   font-size: 14px;
@@ -423,6 +426,77 @@ width: 0;
 z-index: 1;
 bottom: -17px;
 left: 56px;
+}
+
+.edit_trip_field {
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+}
+
+#calendar {
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    font-size: 10px;
+    position: fixed;
+    top: 100px;
+    left: 10px; 
+
+}
+.fc h2 {
+   font-size: 15px;
+}
+.trips_container {
+  margin-left: 180px !important;
+}
+
+#trash-bubble 
+{
+position: fixed;
+bottom: 250px;
+left: 35px; 
+width: 210px;
+height: 80px;
+padding: 0px;
+background: #FFFFFF;
+-webkit-border-radius: 42px;
+-moz-border-radius: 42px;
+border-radius: 42px;
+border: #B5C28B solid 4px;
+}
+
+
+#trash-bubble:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 15px 15px 0;
+border-color: #FFFFFF transparent;
+display: block;
+width: 0;
+z-index: 1;
+bottom: -15px;
+left: 66px;
+}
+
+
+#trash-bubble:before 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 18px 18px 0;
+border-color: #B5C28B transparent;
+display: block;
+width: 0;
+z-index: 0;
+bottom: -22px;
+left: 63px;
+}
+#trash_message {
+  padding: 15px;
 }
 /*!
  * jQuery UI CSS Framework 1.11.4

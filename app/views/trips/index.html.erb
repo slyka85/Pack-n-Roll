@@ -1,19 +1,28 @@
+<div id="calendar"></div>
 <div class="content">
 <% content_for(:page_title) { "ALL TRIPS" } %>
+
 <div class="jumbotron text-center">
   <h2 style="display:inline"> TOTAL TRIPS: </h2>
   <h2 style="display:inline" id="count-trips"></h2>
    <%= image_tag 'trash.jpg', id: 'trash' %>
+   <div id="trash-bubble">
+     <h6 id="trash_message">Delete trips by dragging and dropping to the trash can</h6>
+   </div>
 </div>
+
 <div class="row trips_container">
+
+
+
   <% @trips.each do |trip| %>
     <div class="col-xs-18 col-sm-3 col-md-4 stack" id="tripLi" data-id="<%= trip.id %>">
       <br>
       <div class="thumbnail text-center trip_card">
         <%= google_maps_image_tag(trip.destination, class: "menu_icon") %>
-        <h4 class ="trip_card_title"> <%=link_to trip.destination, trip_path(trip.id) %></h4>
-        <h4 class ="trip_card_title">Start Date : <%=trip.start_date %></h4>
-        <h4 class ="trip_card_title">End Date : <%=trip.end_date %></h4>
+        <h4 class ="trip_card_title"> <%=link_to trip.destination.partition(',').first, trip_path(trip.id) %></h4>
+        <h4 class ="trip_card_title">Depart : <%=trip.start_date %></h4>
+        <h4 class ="trip_card_title">Return : <%=trip.end_date %></h4>
       </div>
       <!-- TODO: Remove ID -->
       <div id="count-trips" class="caption">

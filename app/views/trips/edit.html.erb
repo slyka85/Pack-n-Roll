@@ -1,22 +1,25 @@
+<div class="content">
 <% content_for(:page_title) { "EDIT TRIP" } %>
     <div class="container-fluid" style="margin-left: 115px;">
       <h3> EDIT TRIP INFORMATION</h3>
+      <br>
       <% if @trip.errors.count > 0 %>
         <p class="error">Your Trip had the following errors: <%= @trip.errors.full_messages.join(', ') %> </p>
       <% end %>
-      <%= form_for @trip do |form| %>
-        <p> <%=form.label :destination  %> <br />
-          <%=form.text_field :destination %>
+      <%= form_for @trip do |f| %>
+        <p> <%=f.label :destination  %> <br />
+          <%=f.text_field :destination, class: "edit_trip_field" %>
         </p>
-        <p> <%=form.label :start_date  %> <br />
-          <%=form.date_field :start_date  %>
+        <p> <%=f.label :start_date  %> <br />
+          <%=f.text_field :start_date, class: "edit_trip_field" %>
         </p>
-        <p> <%=form.label :end_date  %> <br />
-          <%=form.date_field :end_date %>
+        <p> <%=f.label :end_date  %> <br />
+          <%=f.text_field :end_date, class: "edit_trip_field"  %>
         </p>
-        <%= form.submit "UPDATE MY TRIP", class: "btn btn-weather" %>
+        <%= f.submit "UPDATE MY TRIP", class: "btn btn-weather" %>
       <% end %>
       <br />
       <%= link_to "CANCEL", :back %>
+    </div>
     </div>
 

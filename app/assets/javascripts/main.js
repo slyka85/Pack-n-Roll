@@ -6,6 +6,31 @@ $(function() {
     $(".datepicker").datepicker({dateFormat: "yy-mm-dd"});
 
 
+////////////////////////////     MINI CALENDAR     /////////////////////////////
+
+    var calendarData = $("#calendar").data("events");
+    var today = $("#calendar").data("today");
+    var randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+    $('#calendar').fullCalendar({
+        defaultDate: today,
+        editable: true,
+        theme: true,
+        height: "auto",
+        header: {
+            title: '5px',
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+        // eventColor: randomColor,
+        events: '/trips.json',
+        dayClick: function(date, jsEvent, view) {
+            console.log(date);
+            var date = $(this).data("date");
+        }
+    });
+
+
     ////////////////////////// DRAG A TRIP TO TRASH CAN /////////////////////////
 
     $(".stack").draggable();
@@ -132,8 +157,8 @@ $(function() {
 /////////////////////////////   CURRENT LOCATION BY IP    /////////////////////////
   window.onload = getCurrentLocation();
 function getCurrentLocation() {
- var YOUR_KEY = "9ec04c68eba7c73852078ec8db83aea4b4a44537b05181023546ed701667f5af";
- var theURL = "//api.ipinfodb.com/v3/ip-city/?key=" + YOUR_KEY + "&format=json&callback=?";
+ var ipkey = "9ec04c68eba7c73852078ec8db83aea4b4a44537b05181023546ed701667f5af";
+ var theURL = "//api.ipinfodb.com/v3/ip-city/?key=" + ipkey + "&format=json&callback=?";
 
  $.ajax({
         url: theURL,
