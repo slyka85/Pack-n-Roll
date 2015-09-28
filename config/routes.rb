@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # get '/trips/:id/activity_items_trip', to: 'trips#activity_items_trip', as: :activity_items_trip
   delete '/trips', to: 'trips#delete_droppable_trip', as: :delete
   get '/calendar' => 'calendar#index'
+  get '/currency' => 'currency#index'
+  get '/blog' => 'blog#index'
 
 
   resources :trips do

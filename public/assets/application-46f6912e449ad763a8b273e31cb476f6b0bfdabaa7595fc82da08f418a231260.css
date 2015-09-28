@@ -44,6 +44,9 @@ body {
     height: 100%;
   /*  padding-bottom:50px;*/
 }
+.alltrips {
+  margin-left: 12em;
+}
 /*  .displayed {
     display: block;
     margin-left: auto;
@@ -124,6 +127,7 @@ body {
     color: rgb(35, 115, 60);
     background-color: white;
     padding-top: 1px;
+    margin-bottom: 1px;
     padding-bottom: 1px;
   }
   a.btn.btn-primary.btn-lg {

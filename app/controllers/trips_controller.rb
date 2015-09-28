@@ -5,7 +5,14 @@ class TripsController < ApplicationController
     @trips = Trip.where(:user_id == current_user.id)
     @trips_by_date = current_user.trips.group_by{|x| x.start_date.to_date} 
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    @color = "#" + "%06x" % (rand * 0xffffff)
+    # @color = "#" + "%06x" % (rand * 0xffffff)
+    # @colors = ["#EC407A", "#009688", "#795548", "#9575CD"]
+    @colors_array = 25.times.map {"#" + "%06x" % (rand * 0xffffff) }
+     #  @colors_array = []
+     # 25.times do |col|
+     #  ran_color = "#" + "%06x" % (rand * 0xffffff)
+     #  @colors_array.push(ran_color)
+     # end
   end
 
 

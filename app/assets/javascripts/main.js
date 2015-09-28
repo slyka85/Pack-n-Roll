@@ -355,7 +355,7 @@ function getCurrentLocation() {
                         var today = new Date();
                         var dd = today.getDate();
 
-                        $(".day" + i).append("<span> " + new_day + "<img src=" + icon + " style='float:right'></span><div style='clear:both'><h6 style='width: 100%; display:block; height: 100px'> " + weatherResult + "</h6></div>");
+                        $(".day" + i).append("<span> " + new_day + "<img src=" + icon + " style='float:right'></span><div style='clear:both; padding-top:25px;`'><h6 style='width: 100%; display:block; height: 100px'> " + weatherResult + "</h6></div>");
                     }
                 }
             });

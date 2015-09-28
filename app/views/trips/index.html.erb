@@ -1,9 +1,10 @@
 <div id="calendar"></div>
+<div class="alltrips">
 <div class="content">
 <% content_for(:page_title) { "ALL TRIPS" } %>
 
 <div class="jumbotron text-center">
-  <h2 style="display:inline"> TOTAL TRIPS PLANNED: </h2>
+  <h4 style="display:inline"> TOTAL TRIPS PLANNED: </h4>
   <h2 style="display:inline" id="count-trips"></h2>
    <%= image_tag 'trash.jpg', id: 'trash' %>
    <div id="trash-bubble">
@@ -20,7 +21,7 @@
       <br>
 
       <div class="thumbnail text-center trip_card">
-        <h4 class ="trip_card_title"><%=link_to trip.destination.partition(',').first, trip_path(trip.id) %></h4>
+        <h4 class ="trip_card_title"><%=link_to trip.destination.partition(',').first.upcase, trip_path(trip.id) %></h4>
               <%= link_to trip_path(trip.id)  do %>
         <%= google_maps_image_tag(trip.destination, class: "menu_icon") %>
           <% end %>
@@ -39,5 +40,6 @@
       </div>
     </div>
   <% end %>
+</div>
 </div>
 </div>
