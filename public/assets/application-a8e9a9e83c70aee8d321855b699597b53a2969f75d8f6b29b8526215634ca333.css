@@ -303,7 +303,7 @@ input[type="checkbox"]:checked + label {
   background: yellow !important;
 }
 .stack{
-  border:1px solid black;
+/*  border:1px solid black;*/
   width: 30% !important;
   margin: 10px;
 }
@@ -498,6 +498,10 @@ left: 63px;
 }
 #trash_message {
   padding: 15px;
+}
+.menu_icon {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 /*!
  * jQuery UI CSS Framework 1.11.4

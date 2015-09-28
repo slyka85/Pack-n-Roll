@@ -34,6 +34,21 @@ $(function() {
     ////////////////////////// DRAG A TRIP TO TRASH CAN /////////////////////////
 
     $(".stack").draggable();
+
+
+
+// $(".stack").draggable({
+//     helper: 'original',
+//     start: function (e, ui) {
+//         ui.helper.children().animate({
+//             width: 80,
+//             height: 80
+//         });
+//            // $(".thumbnail").siblings().remove();
+//     },
+//     cursorAt: {left:40, top:25}
+// });
+
     $('#trash').droppable({
         drop: function(event, ui) {
             var answer = confirm("Are you sure you want to permanently delete this trip?");

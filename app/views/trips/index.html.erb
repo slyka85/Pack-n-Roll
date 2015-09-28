@@ -18,12 +18,16 @@
   <% current_user.trips.each do |trip| %>
     <div class="col-xs-18 col-sm-3 col-md-4 stack" id="tripLi" data-id="<%= trip.id %>">
       <br>
+
       <div class="thumbnail text-center trip_card">
+        <h4 class ="trip_card_title"><%=link_to trip.destination.partition(',').first, trip_path(trip.id) %></h4>
+              <%= link_to trip_path(trip.id)  do %>
         <%= google_maps_image_tag(trip.destination, class: "menu_icon") %>
-        <h4 class ="trip_card_title"> <%=link_to trip.destination.partition(',').first, trip_path(trip.id) %></h4>
-        <h4 class ="trip_card_title">Depart : <%=trip.start_date %></h4>
+          <% end %>
+                <h4 class ="trip_card_title">Depart : <%=trip.start_date %></h4>
         <h4 class ="trip_card_title">Return : <%=trip.end_date %></h4>
       </div>
+    
       <!-- TODO: Remove ID -->
       <div id="count-trips" class="caption">
         <%= link_to edit_trip_path(trip) do %>
