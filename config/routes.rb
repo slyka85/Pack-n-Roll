@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/currency' => 'currency#index'
   get '/blog' => 'blog#index'
 
-
+# resources :users do
   resources :trips do
     member do
       get :choose_activities
@@ -21,14 +21,13 @@ Rails.application.routes.draw do
     end
 
   end
+# end
 
-  resources :items
-  # resources :calendar
 
-  namespace :api do
-    resources :default_items
-    resources :custom_items
-    resources :trips
-  end
+  # namespace :api do
+  #   resources :default_items
+  #   resources :custom_items
+  #   resources :trips
+  # end
 
 end
