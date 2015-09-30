@@ -2,7 +2,7 @@ class TripsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @trips = Trip.where(:user_id == current_user.id)
+    @trips = current_user.trips.where(:user_id == current_user.id)
     @trips_by_date = current_user.trips.group_by{|x| x.start_date.to_date} 
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     # @color = "#" + "%06x" % (rand * 0xffffff)
@@ -18,7 +18,7 @@ class TripsController < ApplicationController
 
 
   def update_default_items
-    @trip = Trip.find(params[:id])
+    @trip = current_user.trips.find(params[:id])
     @trip.update_attributes!(trip_default_items_attributes: params[:trip][:trip_default_items])
     redirect_to @trip
   end
@@ -27,14 +27,14 @@ class TripsController < ApplicationController
 
   def create
     # binding.pry
-    # @trip = Trip.new(params[:trip])
+    # @trip = current_user.trips.new(params[:trip])
     # @trip.user_id = current_user.id
     # @trip.destination = params[:destination]
     # @trip.start_date = params[:start_date]
     # @trip.end_date = params[:end_date]
     # @trip.id = params[:id]
     # trip_id = params[:id]
-      @trip = Trip.create(
+      @trip = current_user.trips.create(
       destination: params["trip"]["destination"],
       start_date: params["trip"]["start_date"],
       end_date: params["trip"]["end_date"],
@@ -45,7 +45,7 @@ class TripsController < ApplicationController
     # @activity_ids = params["activity_ids"].map { |aid| aid}
     # @activity_ids.each do |aid|
        # @activity = ActivityItem.find_by_id(aid)
-       # @activity.trip_id = Trip.find_by_id(@trip.id).id
+       # @activity.trip_id = current_user.trips.find_by_id(@trip.id).id
        # @trip.activity_item_id = @activity.id
        # @activity.save
        #@trip.save

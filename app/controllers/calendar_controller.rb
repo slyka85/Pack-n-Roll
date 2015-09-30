@@ -1,21 +1,21 @@
 class CalendarController < ApplicationController
   before_action :authenticate_user!
   def index
-    @trips = Trip.where(:user_id == current_user.id)
-    @trips_by_date = @trips.group_by{|x| x.start_date.to_date} 
+    @trips = current_user.trips
+    @trips_by_date = current_user.trips.group_by{|x| x.start_date.to_date} 
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
     def show
-        @trip = Trip.find(params[:id])
+        @trip = current_user.trips.find(params[:id])
         end
 
     def new 
-    @trip = Trip.new
+    @trip = current_user.trips.new
     end
 
     def create
-      @trip = Trip.new
+      @trip = current_user.trips.new
       @trip.user_id = current_user.id
       @trip.destination = params[:destination]
       @trip.start_date = params[:start_date]
@@ -31,11 +31,11 @@ class CalendarController < ApplicationController
 
 
   def edit
-    @trip = Trip.find(params[:id])
+    @trip = current_user.trips.find(params[:id])
   end
 
   def update
-    @trip = Trip.find(params[:id])
+    @trip = current_user.trips.find(params[:id])
     if @trip.update_attributes(params[:trip].permit(:destination,:start_date, :end_date, :user_id))
       redirect_to trips_path
     else
@@ -44,7 +44,7 @@ class CalendarController < ApplicationController
   end
 
   def destroy
-    @trip = Trip.find(params[:id])
+    @trip = current_user.trips.find(params[:id])
     @trip.destroy
     redirect_to trips_path
   end

@@ -1,5 +1,5 @@
 json.array!(@trips) do |trip|
-	  json.extract! trip, :id, :destination
+	  json.extract! trip, :id, :destination, :user_id
 	  json.title trip.destination
 	  json.start trip.start_date
 	  json.end trip.end_date
