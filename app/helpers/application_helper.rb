@@ -9,8 +9,8 @@ module ApplicationHelper
   end
 
   def current_location_by_ip
-  		GeoIp.timeout = 3
-  	  @location_request = GeoIp.geolocation('69.121.15.38')
+  		GeoIp.timeout = 5
+  	  @location_request = GeoIp.geolocation(request.remote_ip)
   	  @city = @location_request[:city]
   	  @state = @location_request[:region_name]
   	  @country = @location_request[:country_name]
