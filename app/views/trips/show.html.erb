@@ -14,19 +14,40 @@
       </form>
       <br>
     </div> -->
-  </div>
-  <div class ="row">
+
+
    <%= render 'weather_map' %>
-       <br> <br> <br> <br>
-       <div class="row">
+       <br> <br> 
+ <div class ="row">
 
-         <h3>Activities chosen for this trip:</h3>
-         <% @activity_chosen.each do |ac| %>
-          <%= ac.activity_name %>,
+         <h3 class="text-center">YOUR ACTIVITIES:</h3>
+           
+          <%  @trip.activity_items_trips.each do |ait| %>
+
+          <legend>
+          <%=ait.activity_item.activity_name %>
+          </legend>
+            <div id="allCategories">
+            <div class="all_thumbs" id="showToiletries">
+          <% ActivityItem.where(activity_name: ait.activity_item.activity_name ).each do |i|%>
+          <div class="col-sm-2">
+        <div class="thumbnail btn">
+          <%= fields_for "trip_default_items[]", ait do |ff| %>
+              <%= check_box("tag", ait.id, {checked: false}) %>
+            <label class="lined">
+          <%= i.item_name %>
+          </label>
+          </div>
+          </div>
           <% end %>
-
-         <br><hr>
+          <% end %>
+          </div>
+          </div>
+           <% end %>
+ 
        </div>
+
+         <h3 class="text-center">SUGGESTED ITEMS:</h3>
     <%= form_for(@trip, url: update_default_items_trip_path(@trip), method: :put) do |f| %>
       <% categories = @trip.trip_default_items.group_by{|tdi| tdi.default_item.category } %>
       <% categories.each do |category_name, trip_default_items| %>

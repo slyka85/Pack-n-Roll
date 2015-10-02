@@ -18,15 +18,15 @@ class TripsController < ApplicationController
 
 
   def update_default_items
+    binding.pry
     @trip = current_user.trips.find(params[:id])
     @trip.update_attributes!(trip_default_items_attributes: params[:trip][:trip_default_items])
     redirect_to @trip
   end
 
 
-
   def create
-    # binding.pry
+
     # @trip = current_user.trips.new(params[:trip])
     # @trip.user_id = current_user.id
     # @trip.destination = params[:destination]
@@ -38,21 +38,36 @@ class TripsController < ApplicationController
       destination: params["trip"]["destination"],
       start_date: params["trip"]["start_date"],
       end_date: params["trip"]["end_date"],
-      user_id: current_user.id,
-      activity_item_id: params["activity_ids"])
+      user_id: current_user.id)
+      # activity_items_trips: params["activity"].permit(:activity_item_id))
 
+# binding.pry
     # @trip.save
-    # @activity_ids = params["activity_ids"].map { |aid| aid}
-    # @activity_ids.each do |aid|
+    @activity_ids = params["activity_ids"].map { |aid| aid}
+    @activity_ids.each do |aid|
+      @trip.activity_items_trips.create(activity_item_id: aid)
+
        # @activity = ActivityItem.find_by_id(aid)
        # @activity.trip_id = current_user.trips.find_by_id(@trip.id).id
        # @trip.activity_item_id = @activity.id
        # @activity.save
-       #@trip.save
-     # end
+
+
+    #   names = params["activity_names"].map { |an| an }
+    #   items = {}
+    #   names.each do |n|
+    #    ActivityItem.where(activity_name: n).each do |ai|
+    #     items[:activity] = n
+    #     items[:item]= ai.item_name
+    #     puts ai.item_name
+    #   end
+    # end
+       @trip.save
+     end
 
     if @trip.save
-      redirect_to trip_path(@trip, :activity => params[:activity_ids])
+      redirect_to trip_path(@trip)
+      # redirect_to trip_path(@trip, :activity => params[:activity_ids])
     else
       flash[:alert] = 'Please fill out all the fields to proceed'
       redirect_to root_path
@@ -68,6 +83,21 @@ class TripsController < ApplicationController
 
   def show
     # binding.pry
+
+# @trip.activity_items_trips.each do |ait|
+#  activity = ait.activity_item.activity_name
+#  puts activity
+#  ActivityItem.where(activity_name: activity).each do |i|
+#   puts i.item_name
+#   end
+# end
+
+
+
+
+
+
+
     @trip = Trip.find(params[:id])
     @activity_id = params[:activity]
     @activity_chosen =  ActivityItem.where(id: @activity_id)
@@ -143,4 +173,5 @@ class TripsController < ApplicationController
   def default_trip_params
     params.require(:default_items_trips).permit(:id, :trip_id, :user_id, :destination, id: [], default_item_ids: [], default_items: [], item_ids: [], trip_ids: [])
   end
+
 end

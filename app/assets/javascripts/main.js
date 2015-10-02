@@ -123,6 +123,7 @@ $(function() {
         console.log(this);
         $(this).toggleClass('highlight');
         if($(this).css('opacity') == 1){
+                     // $(".thumbnail").wrap("<strike>");
             $(this).animate({opacity:0.5}, 1000);
         } else{
             $(this).animate({opacity:1}, 1000);

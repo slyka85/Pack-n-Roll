@@ -276,6 +276,9 @@ li.checked:before {
 }
 .all_thumbs .thumbnail.highlight {
  background: #39CCCC !important;
+  text-decoration: line-through !important;
+  color: black !important;
+
 }
 #allCategories {
   display: block;

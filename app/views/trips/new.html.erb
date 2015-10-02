@@ -40,23 +40,23 @@
                                         </div>
                                         <br>
             </div>
-            <div class="col-sm-8">
-                <div id="allCategories">
-                    <div class="all_thumbs" id="showToiletries">
-                        <% ActivityItem.all.sort_by { |d| d.activity_name }.each do |activity| %>
-                            <div class="col-sm-4">
-                                <div class="thumbnail btn activities">
-                                    <%=fields_for "activity[]", activity do |ff| %>
-                                        <label>
-                                            <%=activity.activity_name %>
-                                                <%=ff.hidden_field :id%>
-                                                    <%=check_box_tag 'activity_ids[]', activity.id, false %>
-                                        </label>
-                                        <%=image_tag( "#{activity.activity_name}.jpg", :class=> "activity_image") %>
-                                </div>
-                            </div>
-                            <% end %>
-                                <% end %>
+    <div class="col-sm-8">
+        <div id="allCategories">
+            <div class="all_thumbs" id="showToiletries">
+                   <% activities = ActivityItem.all.group_by{|ait| ait.activity_name } %>
+                    <% activities.each do |activity_name, activity_item| %>
+                    <div class="col-sm-4">
+                        <div class="thumbnail btn activities">
+                            <%=fields_for "activity_item[]", activity_item do |ff| %>
+                                <label>
+                                    <%=activity_name %>
+                                            <%=check_box_tag 'activity_ids[]', activity_item.first.id, false %>
+                                </label>
+                                <%=image_tag( "#{activity_name}.jpg", :class=> "activity_image") %>
+                        </div>
+                    </div>
+                    <% end %>
+                        <% end %>
                     </div>
                 </div>
             </div>

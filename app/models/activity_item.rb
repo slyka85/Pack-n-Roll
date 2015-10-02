@@ -1,4 +1,4 @@
 class ActivityItem < ActiveRecord::Base
-	has_many :trip_activity_items
-	has_many :trips, through: :trip_activity_items
+	has_many :tactivity_items_trips
+	has_many :trips, through: :activity_items_trips
 end

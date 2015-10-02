@@ -2,8 +2,8 @@ class Trip < ActiveRecord::Base
 
 	validates_presence_of :destination, :start_date, :end_date
 	has_many :trip_default_items
-	has_many :trip_activity_items
-	has_many :activity_items, through: :trip_activity_items
+	has_many :activity_items_trips
+	has_many :activity_items, through: :activity_items_trips
 	has_many :default_items, through: :trip_default_items
 	belongs_to :user
 	after_create :populate_default_items
@@ -14,6 +14,6 @@ class Trip < ActiveRecord::Base
 		end
 	end
 	accepts_nested_attributes_for :trip_default_items
-	accepts_nested_attributes_for :trip_activity_items
+	accepts_nested_attributes_for :activity_items_trips
 
 end
