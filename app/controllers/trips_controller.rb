@@ -18,7 +18,7 @@ class TripsController < ApplicationController
 
 
   def update_default_items
-    binding.pry
+    # binding.pry
     @trip = current_user.trips.find(params[:id])
     @trip.update_attributes!(trip_default_items_attributes: params[:trip][:trip_default_items])
     redirect_to @trip
@@ -82,7 +82,7 @@ class TripsController < ApplicationController
 
 
   def show
-    # binding.pry
+    binding.pry
 
 # @trip.activity_items_trips.each do |ait|
 #  activity = ait.activity_item.activity_name
