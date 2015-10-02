@@ -79,6 +79,7 @@ GEM
     geo_ip (0.6.0)
       json (~> 1.4)
       rest-client (~> 1.6.1)
+    geocoder (1.2.11)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     google-webfonts-rails (0.0.4)
@@ -222,6 +223,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   geo_ip
+  geocoder
   google-webfonts-rails
   htmlbeautifier
   jbuilder (~> 2.0)

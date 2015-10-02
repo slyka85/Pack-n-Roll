@@ -34,4 +34,5 @@ gem 'jquery-ui-rails'
 gem 'google-webfonts-rails'
 gem 'htmlbeautifier'
 gem 'geo_ip'
+gem 'geocoder'
 
