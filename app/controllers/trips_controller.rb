@@ -82,7 +82,7 @@ class TripsController < ApplicationController
 
 
   def show
-    binding.pry
+    # binding.pry
 
 # @trip.activity_items_trips.each do |ait|
 #  activity = ait.activity_item.activity_name
