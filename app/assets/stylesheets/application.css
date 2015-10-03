@@ -510,3 +510,9 @@ left: 63px;
   padding-left: 12px;
   padding-right: 12px;
 }
+.trip_information {
+    overflow: hidden !important;
+    margin-bottom: 50px !important;
+    padding: 7px !important;
+
+}

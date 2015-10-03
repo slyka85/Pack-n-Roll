@@ -7,6 +7,9 @@
         <p class="error">Your Trip had the following errors: <%= @trip.errors.full_messages.join(', ') %> </p>
       <% end %>
       <%= form_for @trip do |f| %>
+        <p> <%=f.label :current_location  %> <br />
+          <%=f.text_field :current_location, class: "edit_trip_field" %>
+        </p>
         <p> <%=f.label :destination  %> <br />
           <%=f.text_field :destination, class: "edit_trip_field" %>
         </p>

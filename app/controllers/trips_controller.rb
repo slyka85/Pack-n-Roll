@@ -29,15 +29,9 @@ class TripsController < ApplicationController
 
   def create
 
-    # @trip = current_user.trips.new(params[:trip])
-    # @trip.user_id = current_user.id
-    # @trip.destination = params[:destination]
-    # @trip.start_date = params[:start_date]
-    # @trip.end_date = params[:end_date]
-    # @trip.id = params[:id]
-    # trip_id = params[:id]
       @trip = current_user.trips.create(
       destination: params["trip"]["destination"],
+      current_location: params["trip"]["current_location"],
       start_date: params["trip"]["start_date"],
       end_date: params["trip"]["end_date"],
       user_id: current_user.id)
@@ -150,7 +144,7 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    if @trip.update_attributes(params[:trip].permit(:destination, :start_date, :end_date, :user_id))
+    if @trip.update_attributes(params[:trip].permit(:current_location, :destination, :start_date, :end_date, :user_id))
       redirect_to(@trip)
     else
       render :edit
@@ -173,7 +167,7 @@ class TripsController < ApplicationController
   private
 
   def default_trip_params
-    params.require(:default_items_trips).permit(:id, :trip_id, :user_id, :destination, id: [], default_item_ids: [], default_items: [], item_ids: [], trip_ids: [])
+    params.require(:default_items_trips).permit(:id, :trip_id, :user_id, :current_location, :destination, id: [], default_item_ids: [], default_items: [], item_ids: [], trip_ids: [])
   end
 
 end

@@ -1,6 +1,9 @@
-<div class="col-md-4">
+<div class="col-md-3 trip_information">
   <h4> YOUR TRIP INFORMATION </h4>
-  <h4 style="display:inline">Destination: &nbsp;</h4>
+  <h4 style="display:inline">FROM: &nbsp;</h4>
+  <h5  id="cur_loc" style="display:inline"><%=@trip.current_location%> &nbsp;</h5>
+  <br>
+  <h4 style="display:inline">TO: &nbsp;</h4>
   <h5  id="query" style="display:inline"><%=@trip.destination%> &nbsp;</h5>
   <br>
   <h4 style="display:inline">Start Date: &nbsp; &nbsp; </h4>
@@ -12,12 +15,23 @@
   <br>
   <%=link_to '<i class="fa fa-pencil-square-o"></i> EDIT INFO'.html_safe, edit_trip_path, class: "btn btn-primary" %>
 </div>
-<div id="map-canvas" style="width: 750px; height: 400px;">
+<br><br>
+<!-- <div class="row"> -->
+<div class="col-md-9">
+<div class="text-center">
+<div id="map-canvas" style="width: 900px; height: 540px;">
+</div>
+</div>
+<!-- </div> -->
 </div>
 <hr/>
-<div class="text-center">
-  <h3 class="heading"> 10 DAY WEATHER:  </h3>
-  <div id = "results">
+
+
+<br><br><br>
+    <h3 class="heading" style="color: white"> WEATHER  </h3>
+    <div class="text-center">
+  <div id = "results" style='margin-top: 50px'>
+
     <div class="weather day0"></div>
     <div class="weather day2"></div>
     <div class="weather day4"></div>
