@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title><%= page_title %></title>
+    <%= include_gon if defined? gon && gon.present? %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

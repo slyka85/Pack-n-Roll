@@ -8,7 +8,8 @@ module ApplicationHelper
     image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{destination}&zoom=14&size=300x300", options)
   end
 
-  # def current_location_by_ip
+  def current_location_by_ip
+  			@ip = request.remote_ip
   # 		GeoIp.timeout = 10
   # 	  @location_request = GeoIp.geolocation(request.remote_ip)
   # 	  @city = @location_request[:city]
@@ -16,7 +17,7 @@ module ApplicationHelper
   # 	  @country = @location_request[:country_name]
   # 	  @location_string = @city+", "+@state+", "+@country
   # 	  return @location_string
-  # end
+  end
 
   def location_with_geocoder
   	@result = request.location

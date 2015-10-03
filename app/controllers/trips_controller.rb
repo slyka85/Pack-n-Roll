@@ -14,7 +14,9 @@ class TripsController < ApplicationController
      #  @colors_array.push(ran_color)
      # end
   end
-
+  def new
+    gon.ip = request.remote_ip
+  end
 
 
   def update_default_items

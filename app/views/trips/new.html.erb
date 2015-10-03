@@ -1,3 +1,6 @@
+<head>
+  <%= include_gon %>
+ </head>
 <div class="content">
     <% content_for(:page_title) { 'Create your trip!' } %>
         <% if current_user %>
@@ -24,7 +27,7 @@
                                     <hr>
                                     <div class="form-group">
                                         <label for="current">Looks like your current location is:</label>
-                                    <%= f.text_field  :current_location, placeholder: "Enter your current location", value: location_with_geocoder, id: "query", class: "form-control location" %>
+                                    <%= f.text_field  :current_location, placeholder: "Enter your current location", id: "query", class: "form-control location" %>
                                     </div>
                                         <div class="form-group">
                                         <label for="destination">What is your Destination?</label>
