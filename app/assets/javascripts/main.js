@@ -149,7 +149,7 @@ $(function() {
         autoFocus: true,
         source: function(request, response) {
             $.ajax({
-                url: "//gd.geobytes.com/AutoCompleteCity",
+                url: "https://secure.geobytes.com/AutoCompleteCity",
                 dataType: "jsonp",
                 data: {
                     q: request.term
