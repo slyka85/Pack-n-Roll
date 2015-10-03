@@ -15,6 +15,7 @@
 
 *= require_self
 *= require jquery-ui
+*= require font-awesome
 *= require_tree .
 */
 

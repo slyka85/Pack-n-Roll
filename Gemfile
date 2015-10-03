@@ -36,4 +36,5 @@ gem 'htmlbeautifier'
 gem 'geo_ip'
 gem 'geocoder'
 gem 'gon'
+gem 'font-awesome-rails'
 

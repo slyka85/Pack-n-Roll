@@ -173,9 +173,9 @@ $(function() {
 /////////////////////////////   CURRENT LOCATION BY IP    /////////////////////////
   window.onload = getCurrentLocation();
 function getCurrentLocation() {
- // var user_ip = gon.ip;
+ var user_ip = gon.ip;
  var apikey = "9ec04c68eba7c73852078ec8db83aea4b4a44537b05181023546ed701667f5af";
- var theURL = "//api.ipinfodb.com/v3/ip-city/?key=" + apikey + "&format=json&callback=?";
+ var theURL = "//api.ipinfodb.com/v3/ip-city/?key=" + apikey + "&ip="+ user_ip+"&format=json&callback=?";
 
  $.ajax({
         url: theURL,
