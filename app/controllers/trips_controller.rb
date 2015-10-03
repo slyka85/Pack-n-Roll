@@ -28,7 +28,6 @@ class TripsController < ApplicationController
 
 
   def create
-
       @trip = current_user.trips.create(
       destination: params["trip"]["destination"],
       current_location: params["trip"]["current_location"],
@@ -37,8 +36,6 @@ class TripsController < ApplicationController
       user_id: current_user.id)
       # activity_items_trips: params["activity"].permit(:activity_item_id))
 
-# binding.pry
-    # @trip.save
     @activity_ids = params["activity_ids"].map { |aid| aid}
     @activity_ids.each do |aid|
       @trip.activity_items_trips.create(activity_item_id: aid)
@@ -78,7 +75,7 @@ class TripsController < ApplicationController
 
 
   def show
-    # binding.pry
+  
 
 # @trip.activity_items_trips.each do |ait|
 #  activity = ait.activity_item.activity_name

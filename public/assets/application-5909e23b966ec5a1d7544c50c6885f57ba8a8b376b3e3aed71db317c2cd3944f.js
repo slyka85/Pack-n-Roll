@@ -30571,7 +30571,7 @@ $(function() {
     }
     ////////////////////END OF TO PACK /////////////////
 
-
+///////////////////////// GOOGLE MAPS ///////////////////////
     if ($('#map-canvas').length) {
         // google maps
         function initialize() {
@@ -30583,8 +30583,13 @@ $(function() {
             var results;
             var geocoder = new google.maps.Geocoder();
             var location = city;
+            var cur_loc = $("#cur_loc").text().split(', ');
+            var cur_city = cur_loc.shift();
+            var cur_location = cur_city;
 
 
+            var cur_lat;
+            var cur_long;
             var lat_result;
             var long_result;
 
@@ -30592,21 +30597,41 @@ $(function() {
                 'address': location
             }, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
-                    map.setCenter(results[0].geometry.location);
+                    // map.setCenter(results[0].geometry.location);
                     lat_result = results[0].geometry.location.lat();
                     console.log(lat_result);
                     long_result = results[0].geometry.location.lng();
                     console.log(long_result);
                     latlong = lat_result + ", " + long_result;
                     weather(lat_result, long_result);
+                    markers(lat_result, long_result);
                 } else {
                     alert("Something got wrong " + status);
                 }
 
             });
 
+                geocoder.geocode({
+                'address': cur_location
+            }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    // map.setCenter(results[0].geometry.location);
+                    cur_lat = results[0].geometry.location.lat();
+                    console.log(cur_lat);
+                    cur_long = results[0].geometry.location.lng();
+                    console.log(cur_long);
+                    cur_latlong = cur_lat + ", " + cur_long;
+                    markers(cur_lat, cur_long);
+                } else {
+                    alert("Something got wrong " + status);
+                }
+
+            });
+
+
             var mapOptions = {
-                zoom: 7,
+                center:new google.maps.LatLng(30.508742,-0.120850),
+                zoom: 2,
                 styles: [{
                     "featureType": "road",
                     "elementType": "geometry",
@@ -30621,12 +30646,25 @@ $(function() {
                     "stylers": [{
                         "color": "#39CCCC"
                     }]
-                }],
+                }]
 
-                center: new google.maps.LatLng(-34.397, 150.644)
+           
+
+
             };
             var map = new google.maps.Map(document.getElementById('map-canvas'),
                 mapOptions);
+
+function markers(lat_result, long_result) {
+var myCenter = new google.maps.LatLng(lat_result, long_result);
+    var marker = new google.maps.Marker({
+    position: myCenter,
+     animation:google.maps.Animation.BOUNCE,
+    map: map,
+    title: 'Hello World!'
+  });
+}
+
         }
 
 
@@ -30648,7 +30686,7 @@ $(function() {
             var city = query.shift();
             var country = query.shift();
 
-            $(".heading").append(city);
+            // $(".heading").append(city);
 
             $.ajax({
                 url: "//api.wunderground.com/api/c391db3a2a98fb5a/forecast10day/q/" + lat_result + "," + long_result + ".json",
