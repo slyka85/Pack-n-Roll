@@ -31,7 +31,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'simple_form'
 gem 'devise'
 gem 'jquery-ui-rails'
-# gem 'google-webfonts-rails'
+gem 'google-webfonts-rails'
 gem 'htmlbeautifier'
 gem 'geo_ip'
 gem 'geocoder'

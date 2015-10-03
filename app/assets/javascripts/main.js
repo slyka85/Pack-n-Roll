@@ -145,6 +145,7 @@ $(function() {
 
     /////////////////////////////////// PLACES AUTOCOMPLETE ////////////////////
 
+    /// another url https://api.teleport.org/api/cities/?search=odes
     $(".location").autocomplete({
         autoFocus: true,
         source: function(request, response) {
@@ -170,27 +171,7 @@ $(function() {
         minLength: 3
     });
 
-/////////////////////////////   CURRENT LOCATION BY IP    /////////////////////////
-  window.onload = getCurrentLocation();
-function getCurrentLocation() {
- var user_ip = gon.ip;
- var apikey = "9ec04c68eba7c73852078ec8db83aea4b4a44537b05181023546ed701667f5af";
- var theURL = "//api.ipinfodb.com/v3/ip-city/?key=" + apikey + "&ip="+ user_ip+"&format=json&callback=?";
 
- $.ajax({
-        url: theURL,
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        method: 'GET',
-        success: function(data) {
-        var cur_city = data.cityName;
-        var cur_region = data.regionName;
-        var cur_country = data.countryName;
-        console.log(cur_city, cur_region, cur_country);
-        $('#query').val(cur_city + ", " + cur_region + ", " + cur_country);
-        }
-    });
-}
 
     //////////////////////////////////////// To PACK ////////////////////////////
     // countTodos();
@@ -364,5 +345,28 @@ function getCurrentLocation() {
         }
         window.initialize = initialize;
     }
+
+
+    /////////////////////////////   CURRENT LOCATION BY IP    /////////////////////////
+  window.onload = getCurrentLocation();
+function getCurrentLocation() {
+ var user_ip = gon.ip;
+ var apikey = "9ec04c68eba7c73852078ec8db83aea4b4a44537b05181023546ed701667f5af";
+ var theURL = "//api.ipinfodb.com/v3/ip-city/?key=" + apikey + "&ip="+ user_ip+"&format=json&callback=?";
+
+ $.ajax({
+        url: theURL,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        method: 'GET',
+        success: function(data) {
+        var cur_city = data.cityName;
+        var cur_region = data.regionName;
+        var cur_country = data.countryName;
+        console.log(cur_city, cur_region, cur_country);
+        $('#query').val(cur_city + ", " + cur_region + ", " + cur_country);
+        }
+    });
+}
 
 }); //end of ready function
