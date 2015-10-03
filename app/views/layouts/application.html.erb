@@ -6,10 +6,11 @@
     <%= include_gon if defined? gon && gon.present? %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
     <link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css">
@@ -25,10 +26,6 @@
     </div>
          <%= render "layouts/footer" %>
 
-    <!-- script src="//code.jquery.com/jquery-2.1.4.js"></script -->
-    <!-- script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script -->
-    <!-- script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script -->
-    <!-- script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.0.0/mustache.js"></script -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.min.js"></script>

@@ -1,4 +1,3 @@
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -17,242 +16,330 @@
 
 
 */
-
-
-
+/* line 23, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 html,
 body {
-  margin:0;
-  padding:0;
-  height:100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 /*.jumbotron {
   margin-top: 80px;
   margin-bottom: 1px;
   }*/
-
+/* line 35, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .container {
-  min-height:100% !important;
-  position:relative !important;
-/*  margin-right: 40px !important;
-  margin-left: 300px !important;*/
+  min-height: 100% !important;
+  position: relative !important;
+  /*  margin-right: 40px !important;
+    margin-left: 300px !important;*/
 }
-.content{
-    margin-top: 8em;
-    margin-bottom: 5em;
-    height: 100%;
+
+/* line 41, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.content {
+  margin-top: 8em;
+  margin-bottom: 5em;
+  height: 100%;
   /*  padding-bottom:50px;*/
 }
+
+/* line 47, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .alltrips {
   margin-left: 12em;
 }
+
 /*  .displayed {
     display: block;
     margin-left: auto;
     margin-right: auto
   }*/
+/* line 56, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
 
-  .form-signin {
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
-  }
-  .middle {
-    margin-top: 150px;
-  }
-  .form-signin .form-signin-heading,
-  .form-signin .checkbox {
-    margin-bottom: 10px;
-  }
-  .form-signin .checkbox {
-    font-weight: normal;
-  }
-  .form-signin .form-control {
-    position: relative;
-    height: auto;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 16px;
-  }
-  .form-signin .form-control:focus {
-    z-index: 2;
-  }
-  .form-signin input {
-    margin-bottom: 10px;
-  }
+/* line 61, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.middle {
+  margin-top: 150px;
+}
 
-  .btn-block {
-    background: #1abc9c;
-    color: white;
-  }
-  .btn-block:hover {
-    background: rgba(22, 160, 133,1.0);
-    color: white;
-  }
-  .btn-lg {
-    background: #1abc9c;
-    border: 2px solid white;
-  }
-  .btn-custom-darken {
-    background-color: #000000 ;
-    color: white;
-  }
+/* line 64, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
 
-  .btn-primary {
-    color: #fff;
-    background-color: #42CAAB !important;
-    border-color: #357ebd;
-  }
+/* line 68, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.form-signin .checkbox {
+  font-weight: normal;
+}
 
-  .btn-lg:hover {
-    background: rgba(22, 160, 133,1.0);
-  }
+/* line 71, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
 
-  #toggleIt:hover {
-    background-color: black;
-    color: white;
-  }
- .next-button {
-  height: 50px !important; 
+/* line 80, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+/* line 83, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.form-signin input {
+  margin-bottom: 10px;
+}
+
+/* line 87, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.btn-block {
+  background: #1abc9c;
+  color: white;
+}
+
+/* line 91, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.btn-block:hover {
+  background: #16a085;
+  color: white;
+}
+
+/* line 95, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.btn-lg {
+  background: #1abc9c;
+  border: 2px solid white;
+}
+
+/* line 99, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.btn-custom-darken {
+  background-color: #000000;
+  color: white;
+}
+
+/* line 104, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.btn-primary {
+  color: #fff;
+  background-color: #42CAAB !important;
+  border-color: #357ebd;
+}
+
+/* line 110, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.btn-lg:hover {
+  background: #16a085;
+}
+
+/* line 114, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+#toggleIt:hover {
+  background-color: black;
+  color: white;
+}
+
+/* line 118, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.next-button {
+  height: 50px !important;
   width: 50%;
   background-color: #00BCD4 !important;
- }
+}
+
 /*  .location .date {
     max-width: 500px;
   }*/
- .container .jumbotron {
-    color: rgb(35, 115, 60);
-    background-color: white;
-    padding-top: 1px;
-    margin-bottom: 1px;
-    padding-bottom: 1px;
-  }
-  a.btn.btn-primary.btn-lg {
-    background: #1abc9c;
-    border: 2px solid white;
-  }
-  #homepic {
-   width: 100%;
-   position: absolute;
-   left: 0;
-   z-index: -1000;
- }
- .btn-edit {
-  background: rgb(26, 188, 156);
+/* line 126, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.container .jumbotron {
+  color: #23733c;
+  background-color: white;
+  padding-top: 1px;
+  margin-bottom: 1px;
+  padding-bottom: 1px;
+}
+
+/* line 133, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+a.btn.btn-primary.btn-lg {
+  background: #1abc9c;
+  border: 2px solid white;
+}
+
+/* line 137, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+#homepic {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: -1000;
+}
+
+/* line 143, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.btn-edit {
+  background: #1abc9c;
   color: white;
 }
+
+/* line 147, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .btn-delete {
-  background: rgb(231, 76, 60);
+  background: #e74c3c;
   color: white;
 }
+
+/* line 151, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .btn-update {
-  background: rgb(155, 89, 182);
+  background: #9b59b6;
   color: white;
 }
+
+/* line 155, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .btn-weather {
   background: rgba(231, 76, 60, 0.8);
   color: white;
 }
 
-.todolist{
-  background-color:#FFF;
-  padding:20px 20px 10px 20px;
-  margin-top:30px;
+/* line 160, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.todolist {
+  background-color: #FFF;
+  padding: 20px 20px 10px 20px;
+  margin-top: 30px;
 }
-.todolist h1{
-  margin:0;
-  padding-bottom:20px;
-  text-align:center;
+
+/* line 165, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.todolist h1 {
+  margin: 0;
+  padding-bottom: 20px;
+  text-align: center;
 }
-.form-control{
-  border-radius:0;
+
+/* line 170, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.form-control {
+  border-radius: 0;
   width: 100% !important;
 }
-li.ui-state-default{
-  background:#fff;
-  border:none;
-  border-bottom:1px solid #ddd;
+
+/* line 174, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+li.ui-state-default {
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid #ddd;
 }
 
-li.ui-state-default:last-child{
-  border-bottom:none;
+/* line 180, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+li.ui-state-default:last-child {
+  border-bottom: none;
 }
 
-.todo-footer{
-  background-color:#F4FCE8;
-  margin:0 -20px -10px -20px;
+/* line 184, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.todo-footer {
+  background-color: #F4FCE8;
+  margin: 0 -20px -10px -20px;
   padding: 10px 20px;
 }
-#done-items li{
-  padding:10px 0;
-  border-bottom:1px solid #ddd;
-  text-decoration:line-through;
-}
-#done-items li:last-child{
-  border-bottom:none;
+
+/* line 189, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+#done-items li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  text-decoration: line-through;
 }
 
+/* line 194, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+#done-items li:last-child {
+  border-bottom: none;
+}
+
+/* line 198, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 #markall {
   color: green;
 }
 
+/* line 202, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 #item {
- display: none;
+  display: none;
 }
 
 @media print {
-  .notPrint, #notPrint{
+  /* line 207, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+  .notPrint, #notPrint {
     display: none;
   }
 }
-
 /*#wide {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
 }*/
-
-
+/* line 219, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 #count-trips {
   color: green;
 }
 
+/* line 224, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+ul {
+  padding-left: 20px;
+  list-style-type: none;
+}
 
-ul { padding-left:20px; list-style-type: none; }
-li.unchecked { margin-bottom:10px; }
+/* line 225, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+li.unchecked {
+  margin-bottom: 10px;
+}
+
+/* line 226, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 li.unchecked:before {
-
-  margin:0 5px 0 -15px;
+  margin: 0 5px 0 -15px;
 }
 
-ul { padding-left:20px; list-style-type: none; }
-li.checked { margin-bottom:10px; }
+/* line 231, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+ul {
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+/* line 232, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+li.checked {
+  margin-bottom: 10px;
+}
+
+/* line 233, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 li.checked:before {
-
-  margin:0 5px 0 -15px;
+  margin: 0 5px 0 -15px;
 }
 
+/* line 238, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .red {
   background-color: red;
 }
 
+/* line 242, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 #catButtons button {
-  background:rgb(255,145,0);
+  background: #ff9100;
 }
 
+/* line 246, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 #catButtons button.highlight {
   background: #39CCCC;
 }
+
+/* line 249, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .highlighted {
   background: #39CCCC !important;
 }
 
-.flash {display: none; height: 50px; position: absolute; }
-.flash-error { background-color:#F50057; color:#fff}
+/* line 253, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.flash {
+  display: none;
+  height: 50px;
+  position: absolute;
+}
 
+/* line 254, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.flash-error {
+  background-color: #F50057;
+  color: #fff;
+}
+
+/* line 256, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .weather {
   margin: 10px;
   padding: 5px;
@@ -262,33 +349,41 @@ li.checked:before {
   width: 210px;
 }
 
+/* line 265, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .slick-prev:before, .slick-next:before {
-  color:black !important;
-}
-#results {
-  display:block;
+  color: black !important;
 }
 
+/* line 268, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+#results {
+  display: block;
+}
+
+/* line 272, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .all_thumbs .thumbnail {
   background: #ff5252 !important;
   color: white;
   position: relative;
   margin-bottom: 3px;
 }
+
+/* line 278, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .all_thumbs .thumbnail.highlight {
- background: #39CCCC !important;
+  background: #39CCCC !important;
   text-decoration: line-through !important;
   color: black !important;
-
 }
+
+/* line 284, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 #allCategories {
   display: block;
   padding-bottom: 70px;
   overflow: hidden;
   /*  height: 500px;*/
 }
-/*label { background-color:#333; color:#FFF; }*/
 
+/*label { background-color:#333; color:#FFF; }*/
+/* line 292, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 input[type="checkbox"] {
   margin: -5px 0 0 !important;
   position: absolute;
@@ -300,108 +395,129 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+/* line 303, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 input[type="checkbox"]:checked + label {
   /*  background: brown;*/
   text-decoration: line-through;
   color: black;
 }
 
+/* line 309, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .activity {
   background: yellow !important;
 }
-.stack{
-/*  border:1px solid black;*/
+
+/* line 312, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.stack {
+  /*  border:1px solid black;*/
   width: 30% !important;
   margin: 10px;
 }
+
 /*#tripLi {
     padding: 6px;
 }*/
+/* line 320, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .edit_icon {
-  float:left;
-  width: 40px;
-  height: 40px;
-  padding: 5px;
-}
-.delete_icon {
-  float:right;
+  float: left;
   width: 40px;
   height: 40px;
   padding: 5px;
 }
 
+/* line 326, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.delete_icon {
+  float: right;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+
+/* line 333, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 #trash {
   position: fixed;
   width: 150px;
   height: 150px;
   bottom: 100px;
-  left: 10px; 
+  left: 10px;
 }
+
+/* line 340, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .trip_card_title {
   font-size: 14px;
 }
+
+/* line 343, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .trip_card {
   margin-bottom: 1px !important;
 }
+
+/* line 346, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .navbar {
-/*  margin-bottom: 0px !important;
-  border-radius: 0px !important;*/
-/*  position: fixed !important;
-  width: 100%;*/
+  /*  margin-bottom: 0px !important;
+    border-radius: 0px !important;*/
+  /*  position: fixed !important;
+    width: 100%;*/
 }
+
+/* line 352, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 #home {
-    padding-top: 5px;
+  padding-top: 5px;
 }
-.footer{
+
+/* line 355, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.footer {
   background-color: black;
-  width:100%;
-/*  height:100px;*/
-  position:relative;
-/*  bottom:0;
-  left:0;*/
-}
-.flash, .flash-error
-{
-position: relative;
-width: 350px;
-height: 65px;
-padding: 7px;
-background-color:#F50057; 
-color:#fff;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-border: #DD4313 solid 1px;
-
+  width: 100%;
+  /*  height:100px;*/
+  position: relative;
+  /*  bottom:0;
+    left:0;*/
 }
 
-.flash:after, .flash-error:after
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 26px 15px 0;
-border-color: #F50057 transparent;
-display: block;
-width: 0;
-z-index: 1;
-bottom: -26px;
-left: 71px;
+/* line 363, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.flash, .flash-error {
+  position: relative;
+  width: 350px;
+  height: 65px;
+  padding: 7px;
+  background-color: #F50057;
+  color: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: #DD4313 solid 1px;
 }
 
-.flash:before, .flash-error:before 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 26px 15px 0;
-border-color: #DD4313 transparent;
-display: block;
-width: 0;
-z-index: 0;
-bottom: -27px;
-left: 71px;
+/* line 378, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.flash:after, .flash-error:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 26px 15px 0;
+  border-color: #F50057 transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -26px;
+  left: 71px;
 }
+
+/* line 392, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.flash:before, .flash-error:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 26px 15px 0;
+  border-color: #DD4313 transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  bottom: -27px;
+  left: 71px;
+}
+
+/* line 405, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .activities {
   width: 200px;
   height: 160px;
@@ -409,103 +525,111 @@ left: 71px;
   float: left;
   opacity: 0.5;
 }
+
 /*Flash Notice*/
-.flash-notice
-{
-position: relative;
-width: 360px;
-height: 65px;
-padding: 10px;
-background: #E3FFFF;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
+/* line 413, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.flash-notice {
+  position: relative;
+  width: 360px;
+  height: 65px;
+  padding: 10px;
+  background: #E3FFFF;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
-.flash-notice:after 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 17px 20px 0;
-border-color: #E3FFFF transparent;
-display: block;
-width: 0;
-z-index: 1;
-bottom: -17px;
-left: 56px;
+/* line 425, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+.flash-notice:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 17px 20px 0;
+  border-color: #E3FFFF transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -17px;
+  left: 56px;
 }
 
+/* line 439, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .edit_trip_field {
-    width: 300px;
-    height: 50px;
-    padding: 10px;
+  width: 300px;
+  height: 50px;
+  padding: 10px;
 }
 
+/* line 445, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 #calendar {
-    width: 400px;
-    height: 500px;
-    margin: 0 auto;
-    font-size: 10px;
-    position: fixed;
-    top: 100px;
-    left: 10px; 
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  font-size: 10px;
+  position: fixed;
+  top: 100px;
+  left: 10px;
+}
 
-}
+/* line 455, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .fc h2 {
-   font-size: 15px;
+  font-size: 15px;
 }
+
+/* line 458, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .trips_container {
   margin-left: 180px !important;
 }
 
-#trash-bubble 
-{
-position: fixed;
-bottom: 250px;
-left: 35px; 
-width: 210px;
-height: 80px;
-padding: 0px;
-background: #FFFFFF;
--webkit-border-radius: 42px;
--moz-border-radius: 42px;
-border-radius: 42px;
-border: #B5C28B solid 4px;
+/* line 462, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+#trash-bubble {
+  position: fixed;
+  bottom: 250px;
+  left: 35px;
+  width: 210px;
+  height: 80px;
+  padding: 0px;
+  background: #FFFFFF;
+  -webkit-border-radius: 42px;
+  -moz-border-radius: 42px;
+  border-radius: 42px;
+  border: #B5C28B solid 4px;
 }
 
-
-#trash-bubble:after 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 15px 15px 0;
-border-color: #FFFFFF transparent;
-display: block;
-width: 0;
-z-index: 1;
-bottom: -15px;
-left: 66px;
+/* line 478, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+#trash-bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 15px 15px 0;
+  border-color: #FFFFFF transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -15px;
+  left: 66px;
 }
 
-
-#trash-bubble:before 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 18px 18px 0;
-border-color: #B5C28B transparent;
-display: block;
-width: 0;
-z-index: 0;
-bottom: -22px;
-left: 63px;
+/* line 493, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
+#trash-bubble:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 18px 18px 0;
+  border-color: #B5C28B transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  bottom: -22px;
+  left: 63px;
 }
+
+/* line 506, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 #trash_message {
   padding: 15px;
 }
+
+/* line 509, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/application.css.scss */
 .menu_icon {
   padding-left: 12px;
   padding-right: 12px;
@@ -2070,8 +2194,8 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
 @font-face {
   font-family: 'FontAwesome';
-/*  src: url("/assets/fontawesome-webfont.eot");
-  src: url("/assets/fontawesome-webfont.eot#iefix") format('embedded-opentype'), url("/assets/fontawesome-webfont.woff") format('woff'), url("/assets/fontawesome-webfont.ttf") format('truetype'), url("/assets/fontawesome-webfont.svg#fontawesomeregular") format('svg');*/
+  src: url("/assets/fontawesome-webfont.eot");
+  src: url("/assets/fontawesome-webfont.eot#iefix") format('embedded-opentype'), url("/assets/fontawesome-webfont.woff") format('woff'), url("/assets/fontawesome-webfont.ttf") format('truetype'), url("/assets/fontawesome-webfont.svg#fontawesomeregular") format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -3869,12 +3993,10 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
 
   */
-
-
-
+/* line 12, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 body {
-font-family: 'Raleway', cursive;
-} 
+  font-family: 'Raleway', cursive;
+}
 /* line 2, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/calendar.css.scss */
 body {
   font-family: 'Raleway', cursive;
@@ -3942,20 +4064,22 @@ a {
   font-size: 16px;
   padding-left: 20px;
 }
+/* line 1, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/custom.css.scss */
 body {
-font-family: 'Raleway', cursive !important;
+  font-family: 'Raleway', cursive !important;
 }
+
 /*
 h1, h2, h3 ,h4 {
 font-family: 'Raleway', cursive !important;
 }*/
-
+/* line 9, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/custom.css.scss */
 .btn-primary {
   color: #fff;
   background-color: #42CAAB !important;
   border-color: #357ebd;
 }
-/* line 5, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/welcome.scss */
+/* line 5, /Users/anechka/Documents/CODING/!PROJECTS/PackingListUpdated/app/assets/stylesheets/welcome.css.scss */
 body {
   font-family: 'Raleway', cursive !important;
 }
