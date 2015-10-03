@@ -18,13 +18,13 @@ module ApplicationHelper
   # 	  return @location_string
   # end
 
-  # def location_with_geocoder
-  # 	@result = request.location
-  # 	@city = @result.data["city"]
-  # 	@state = @result.data["region_name"]
-  # 	@country = @result.data["country_name"]
-  # 	@full_location = @city+", "+@state+", "+@country
-  # 	return @full_location
-  # end
+  def location_with_geocoder
+  	@result = request.location
+  	@city = @result.data["city"]
+  	@state = @result.data["region_name"]
+  	@country = @result.data["country_name"]
+  	@full_location = @city+", "+@state+", "+@country
+  	return @full_location
+  end
 
 end
