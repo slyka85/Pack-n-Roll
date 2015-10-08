@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :trips
   has_many :identities
-  validates_presence_of :uid, :provider, :email
+  # validates_presence_of :uid, :provider, :email
   validates_uniqueness_of :uid, :scope => :provider
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
@@ -31,4 +31,16 @@ class User < ActiveRecord::Base
     end
     end
   end
+
+  def self.new_with_session(params, session)
+  	if session["devise.user_attributes"]
+  		new(session["devise.user_attributes"], without_protection: true) do |user|
+  			user_attributes = params
+  			user.valid?
+  		end
+  	else
+  		super
+  end
+end
+
 end
