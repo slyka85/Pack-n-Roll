@@ -29,7 +29,7 @@ end
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 gem 'simple_form'
-gem 'devise'
+gem 'devise', '3.4.1'
 gem 'jquery-ui-rails'
 gem 'google-webfonts-rails'
 gem 'htmlbeautifier'
@@ -37,4 +37,12 @@ gem 'geo_ip'
 gem 'geocoder'
 gem 'gon'
 gem 'font-awesome-rails'
+
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+gem 'omniauth-github'
+
 

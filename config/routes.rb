@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
-  
+
+   # devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+   # devise_for :users 
+  # match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
+  # match '/auth/:action/callback' => 'omniauth_callbacks#:action', via: [:get, :post] 
+    # match '/auth/facebook/callback' => 'omniauth_callbacks#facebook', via: [:get, :post] 
+  # resources :users
 
 
   # get '/test_page' => 'test_page#index'
