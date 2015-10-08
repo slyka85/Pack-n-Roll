@@ -30671,7 +30671,7 @@ var myCenter = new google.maps.LatLng(lat_result, long_result);
         function loadScript() {
             var script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyD-7NSPt2Gzjn79uQ-NoKl7xGKc0oO4H54&sensor=false&callback=initialize';
+            script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&key='#{Rails.application.secrets.google_api_key}'&sensor=false&callback=initialize';
             document.body.appendChild(script);
         }
 
@@ -30689,7 +30689,7 @@ var myCenter = new google.maps.LatLng(lat_result, long_result);
             // $(".heading").append(city);
 
             $.ajax({
-                url: "//api.wunderground.com/api/c391db3a2a98fb5a/forecast10day/q/" + lat_result + "," + long_result + ".json",
+                url: "//api.wunderground.com/api/"#{Rails.application.secrets.weather_api_key}"/forecast10day/q/" + lat_result + "," + long_result + ".json",
                 dataType: "jsonp",
                 success: function(data) {
                     for (var i = 0; i < data.forecast.txt_forecast.forecastday.length; i++) {
