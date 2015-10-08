@@ -30330,6 +30330,15 @@ $(function() {
     $(".datepicker").datepicker({dateFormat: "yy-mm-dd"});
 
 
+
+/////////////////////       SIGN IN MODAL          ///////////////////
+
+
+    $(window).load(function(){
+        $('#myModal').modal('show');
+    });
+
+
 ////////////////////////////     MINI CALENDAR     /////////////////////////////
 
     var calendarData = $("#calendar").data("events");
@@ -30632,6 +30641,8 @@ $(function() {
             var mapOptions = {
                 center:new google.maps.LatLng(30.508742,-0.120850),
                 zoom: 2,
+                minZoom: 2,
+                 mapTypeId: google.maps.MapTypeId.HYBRID,
                 styles: [{
                     "featureType": "road",
                     "elementType": "geometry",
@@ -30648,12 +30659,37 @@ $(function() {
                     }]
                 }]
 
-           
-
-
             };
             var map = new google.maps.Map(document.getElementById('map-canvas'),
                 mapOptions);
+
+
+        // var x=new google.maps.LatLng(52.395715,4.888916);
+        // var stavanger=new google.maps.LatLng(50,30);
+        // var amsterdam=new google.maps.LatLng(52.395715,4.888916);
+        // var london=new google.maps.LatLng(40,-74);
+
+  
+        // var mapProp = {
+        //   center:x,
+        //   zoom:4,
+        //   mapTypeId:google.maps.MapTypeId.ROADMAP
+        //   };
+          
+        // var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+        // var myTrip=[stavanger,amsterdam,london];
+        // var flightPath=new google.maps.Polyline({
+        //   path:myTrip,
+        //   strokeColor:"#0000FF",
+        //   strokeOpacity:0.8,
+        //   strokeWeight:2
+        //   });
+
+        // flightPath.setMap(map);
+
+
+
 
 function markers(lat_result, long_result) {
 var myCenter = new google.maps.LatLng(lat_result, long_result);
@@ -30663,15 +30699,36 @@ var myCenter = new google.maps.LatLng(lat_result, long_result);
     map: map,
     title: 'Hello World!'
   });
-}
 
-        }
+google.maps.event.addListener(marker,'click',function() {
+  map.setZoom(9);
+  map.setCenter(marker.getPosition());
+  });
+
+    var infowindow = new google.maps.InfoWindow({
+  content:"Hello World!"
+  });
+
+infowindow.open(map,marker);
+
+// google.maps.event.addListener(map,'center_changed',function() {
+
+// // 3 seconds after the center of the map has changed, pan back to the marker
+//   window.setTimeout(function() {
+//     map.panTo( new google.maps.LatLng(30.508742,-0.120850));
+//   },3000);
+//   });
+
+}// end of markers function
+
+
+        }// end of initialize
 
 
         function loadScript() {
             var script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&key='#{Rails.application.secrets.google_api_key}'&sensor=false&callback=initialize';
+            script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyD-7NSPt2Gzjn79uQ-NoKl7xGKc0oO4H54&sensor=false&callback=initialize';
             document.body.appendChild(script);
         }
 
@@ -30689,7 +30746,7 @@ var myCenter = new google.maps.LatLng(lat_result, long_result);
             // $(".heading").append(city);
 
             $.ajax({
-                url: "//api.wunderground.com/api/"#{Rails.application.secrets.weather_api_key}"/forecast10day/q/" + lat_result + "," + long_result + ".json",
+                url: "//api.wunderground.com/api/c391db3a2a98fb5a/forecast10day/q/" + lat_result + "," + long_result + ".json",
                 dataType: "jsonp",
                 success: function(data) {
                     for (var i = 0; i < data.forecast.txt_forecast.forecastday.length; i++) {
