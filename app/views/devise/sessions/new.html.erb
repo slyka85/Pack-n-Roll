@@ -45,13 +45,13 @@
 <center>
     <div class="row omb_row-sm-offset-3 omb_socialButtons">
     <div class="text-center">
-   
+     <h5 class="text-center">One-click Sign In</h5>
          
      <%- if devise_mapping.omniauthable? %>
       <%- resource_class.omniauth_providers.each do |provider| %>
-       <br>
+      
         <%= link_to image_tag( "#{provider}.png", class: "social-buttons" ), user_omniauth_authorize_path(provider) %>
-    
+     <br>
       <% end -%>
     <% end -%>
         
@@ -100,12 +100,12 @@
 
     <div class="row omb_row-sm-offset-3 omb_socialButtons">
     <div class="text-center">
-         
+      <h5 class="text-center">One-click Sign Up</h5>
      <%- if devise_mapping.omniauthable? %>
       <%- resource_class.omniauth_providers.each do |provider| %>
-       <br>
+      
         <%= link_to image_tag( "#{provider}.png", class: "social-buttons" ), user_omniauth_authorize_path(provider) %>
-         
+          <br>
       <% end -%>
     <% end -%>
          

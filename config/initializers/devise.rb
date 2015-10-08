@@ -265,11 +265,15 @@ Devise.setup do |config|
     config.secret_key = 'ead17f6169cf696777b2e57eaad5dd3bbea21fc85bd070cfcd8f7b0d085480fd849da4866af8a9b0f3a4e87e15a057d4c0b4c1e0e67859d0dc0a155572e02055'
 
 
-  config.omniauth :facebook, "952135701508696", "c8023d0c1ff4c876ee7959b2420f85dd", scope: 'email, public_profile'
-  config.omniauth :twitter, "ws7YiPFzAszHU5VYqpJuGzxPn", "NDZbCFFeiOdFqE7cZv1U3HMxmTzsO1XszBhLMly3fRXssQefJJ"
-  config.omniauth :google_oauth2, "645573209535-on03jvng731shtk814jdof5mp269btsr.apps.googleusercontent.com", "I6yBWWDiAwoYErX0zho3GoS7"
-  config.omniauth :linkedin, "77e39s7qucn8p4", "HO0P0HXaTK2MZlYR"
-  config.omniauth :github, "175ab9574c9c7d27e9b0", "984ed777f7b1d90f935b1879d3e8b05f53286b70", :scope => 'user:email'
+  config.omniauth :facebook, Rails.application.secrets.facebook_api_key, Rails.application.secrets.facebook_api_secret,
+  {
+    scope: 'email,public_profile',
+    image_size: 'large',
+    info_fields: 'name,email'
+  }
+  config.omniauth :google_oauth2, Rails.application.secrets.google_api_key, Rails.application.secrets.google_api_secret
+  config.omniauth :linkedin, Rails.application.secrets.linkedin_api_key, Rails.application.secrets.linkedin_api_secret
+  config.omniauth :github, Rails.application.secrets.github_api_key, Rails.application.secrets.github_api_secret, :scope => 'user:email'
 
 
 

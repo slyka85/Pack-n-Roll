@@ -16,12 +16,6 @@ class User < ActiveRecord::Base
       user.name = auth.info.name
       user.email = auth.info.nickname
       user.password = Devise.friendly_token[0,20]
-    elsif auth.provider == "facebook"  
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      # user.email = auth.info.name
-      user.password = Devise.friendly_token[0,20]
     else
     	user.provider = auth.provider
       user.uid = auth.uid
