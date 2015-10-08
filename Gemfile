@@ -44,5 +44,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'omniauth-github'
+gem "omniauth-google-oauth2"
 
 

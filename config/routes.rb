@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # resources :users
 
 
-  # get '/test_page' => 'test_page#index'
+  get '/test_page' => 'test_page#index'
   # post '/trips/:id', to: 'trips#create_default_items_trip', as: :create_default_items_trip
   # get '/trips/:id/activity_items_trip', to: 'trips#activity_items_trip', as: :activity_items_trip
   delete '/trips', to: 'trips#delete_droppable_trip', as: :delete

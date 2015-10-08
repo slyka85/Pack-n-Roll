@@ -1,18 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
-  </head>
-  <body>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin middle"}) do |f| %>
-    <h2 class="text-center">Sign up</h2>
+<div class="container">
+  
+
+<!-- Modal -->
+<div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <br>
+        <div class="bs-example bs-example-tabs">
+            <ul id="myTab" class="nav nav-tabs">
+              <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
+              <li class=""><a href="#signup" data-toggle="tab">Register</a></li>
+  
+            </ul>
+        </div>
+      <div class="modal-body">
+        <div id="myTabContent" class="tab-content">
+
+        <div class="tab-pane fade active in" id="signin">
+
+ <!-- Sign In Form -->
+
+    <div class="omb_login">
+<center>
+    <div class="row omb_row-sm-offset-3 omb_socialButtons">
+    <div class="text-center">
+   
+         
+     <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+       <br>
+        <%= link_to image_tag( "#{provider}.png", class: "social-buttons" ), user_omniauth_authorize_path(provider) %>
+    
+      <% end -%>
+    <% end -%>
+        
+          </div>
+    </div>
+
+    <div class="row omb_row-sm-offset-3 omb_loginOr">
+      <div class="col-xs-12 col-sm-6">
+        <hr class="omb_hrOr">
+        <span class="omb_spanOr">or</span>
+      </div>
+    </div>
+
+    <div class="row omb_row-sm-offset-3">
+     
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin middle"}) do |f| %>
+              <h5 class="text-center">Log in with Email</h5>
     <%= f.error_notification %>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+         <%= f.input :email, required: false, autofocus: true, label: false, placeholder: "Email", input_html: {class: "form-control"} %>
+          </div>
+          <span class="help-block"></span>
+                    
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+    <%= f.input :password, required: false, label: false, placeholder: "Password", input_html: {class: "form-control"} %>
+          </div>
+          <br>
+   <%= f.button :submit, "Log in", class: "btn btn-primary btn-block login", id: "login-btn" %>
+          <% end %>
+            <%-# render "devise/shared/links" -%>
+            <br><br>
+     
+      </div>
+      </center>
+   </div> <!-- omb-login -->
+        </div>
+        <div class="tab-pane fade" id="signup">
+           
+           
+ <!-- Sign Up Form -->
+
+
+    <div class="omb_login">
+
+    <div class="row omb_row-sm-offset-3 omb_socialButtons">
+    <div class="text-center">
+         
+     <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+       <br>
+        <%= link_to image_tag( "#{provider}.png", class: "social-buttons" ), user_omniauth_authorize_path(provider) %>
+         
+      <% end -%>
+    <% end -%>
+         
+          </div>
+    </div>
+     <div class="row omb_row-sm-offset-3 omb_loginOr">
+      <div class="col-xs-12 col-sm-6">
+        <hr class="omb_hrOr">
+        <span class="omb_spanOr">or</span>
+      </div>
+    </div>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin middle"}) do |f| %>
+   <h5 class="text-center">Sign Up with Email</h5>
+    <%= f.error_notification %>
+    <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
     <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email", input_html: {class: "form-control"} %>
-    <%= f.input :password, required: true, label: false, placeholder: "Password", input_html: {class: "form-control"}  %>
+          </div>
+
+      <span class="help-block"></span>
+                    
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+     <%= f.input :password, required: true, label: false, placeholder: "Password", input_html: {class: "form-control"}  %>
+          </div>
+
+    <span class="help-block"></span>
+                    
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
     <%= f.input :password_confirmation, required: true, label: false, placeholder: "Password Confirmation", input_html: {class: "form-control"}  %>
-    <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block" %>
+          </div>
+
+    <span class="help-block"></span>
+    <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block red-btn", id: "signup-btn" %>
     <% end %>
-    <%= render "devise/shared/links" %>
-  </body>
-</html>
+    <%-# render "devise/shared/links" -%>
+    
+          <br>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+</div><!--  end of container -->
+

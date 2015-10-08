@@ -6,6 +6,15 @@ $(function() {
     $(".datepicker").datepicker({dateFormat: "yy-mm-dd"});
 
 
+
+/////////////////////       SIGN IN MODAL          ///////////////////
+
+
+    $(window).load(function(){
+        $('#myModal').modal('show');
+    });
+
+
 ////////////////////////////     MINI CALENDAR     /////////////////////////////
 
     var calendarData = $("#calendar").data("events");

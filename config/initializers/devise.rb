@@ -267,8 +267,10 @@ Devise.setup do |config|
 
   config.omniauth :facebook, "952135701508696", "c8023d0c1ff4c876ee7959b2420f85dd", scope: 'email, public_profile'
   config.omniauth :twitter, "ws7YiPFzAszHU5VYqpJuGzxPn", "NDZbCFFeiOdFqE7cZv1U3HMxmTzsO1XszBhLMly3fRXssQefJJ"
+  config.omniauth :google_oauth2, "645573209535-on03jvng731shtk814jdof5mp269btsr.apps.googleusercontent.com", "I6yBWWDiAwoYErX0zho3GoS7"
   config.omniauth :linkedin, "77e39s7qucn8p4", "HO0P0HXaTK2MZlYR"
   config.omniauth :github, "175ab9574c9c7d27e9b0", "984ed777f7b1d90f935b1879d3e8b05f53286b70", :scope => 'user:email'
+
 
 
 

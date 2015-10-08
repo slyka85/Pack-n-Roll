@@ -3,12 +3,19 @@ class CallbacksController < Devise::OmniauthCallbacksController
   def providers
     # binding.pry
     @user = User.from_omniauth(request.env["omniauth.auth"])
-    sign_in_and_redirect @user
+    # if @user.persisted?
+    sign_in_and_redirect @user, notice: "Signed in!"
+  # else
+  #   redirect_to new_user_registration_url
+  # end
   end
 
-  alias_method :twitter, :providers
-  alias_method :facebook, :providers
-  alias_method :linkedin, :providers
-  alias_method :github, :providers
+
+  [:facebook, :twitter, :google_oauth2, :linkedin, :github].each do |provider|
+    alias_method  provider, :providers
+  end
+
+
+
   
 end
