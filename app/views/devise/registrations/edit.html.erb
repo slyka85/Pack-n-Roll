@@ -14,9 +14,9 @@
     <% end %>
     <%= f.input :password, autocomplete: "off", required: false, label: false, placeholder: "New Password", input_html: {class: "form-control"} %>
     <%= f.input :password_confirmation, required: false, label: false, placeholder: "Password Confirmation", input_html: {class: "form-control"} %>
-    <% if f.object.encrypted_password.present? %>
-         <%= f.input :current_password, required: false, label: false, placeholder: "Currrent Password", input_html: {class: "form-control"} %>
-    <% end %>
+ 
+    <%= f.input :current_password, required: true, label: false, placeholder: "Currrent Password", input_html: {class: "form-control"} %>
+
     <%= f.button :submit, "Update", class: "btn btn-primary btn-block" %>
     <% end %>
     <h3>Cancel my account</h3>

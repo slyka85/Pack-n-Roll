@@ -15,6 +15,7 @@ class TripsController < ApplicationController
      # end
   end
   def new
+    @trip = current_user.trips.new
     gon.ip = request.remote_ip
   end
 
@@ -28,6 +29,7 @@ class TripsController < ApplicationController
 
 
   def create
+    binding.pry
       @trip = current_user.trips.create(
       destination: params["trip"]["destination"],
       current_location: params["trip"]["current_location"],

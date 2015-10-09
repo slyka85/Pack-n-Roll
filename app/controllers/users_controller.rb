@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     render json: session_user
   end
 
+def trips
+end
 
 
   # GET /users/:id/edit

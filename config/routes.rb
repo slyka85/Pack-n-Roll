@@ -18,8 +18,9 @@ Rails.application.routes.draw do
   get '/currency' => 'currency#index'
   get '/blog' => 'blog#index'
 
-# resources :users do
+ # resources :users do
   resources :trips do
+    
     member do
       get :choose_activities
       put :update_activities
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
     end
 
   end
-# end
+ # end
 
 
   # namespace :api do
@@ -36,6 +37,6 @@ Rails.application.routes.draw do
   #   resources :trips
   # end
 
-
-  root 'trips#new'
+ root 'trips#new'
+ 
 end
