@@ -35,28 +35,14 @@ class TripsController < ApplicationController
       end_date: params["trip"]["end_date"],
       user_id: current_user.id)
       # activity_items_trips: params["activity"].permit(:activity_item_id))
+if params["activity_ids"]
 
     @activity_ids = params["activity_ids"].map { |aid| aid}
     @activity_ids.each do |aid|
       @trip.activity_items_trips.create(activity_item_id: aid)
-
-       # @activity = ActivityItem.find_by_id(aid)
-       # @activity.trip_id = current_user.trips.find_by_id(@trip.id).id
-       # @trip.activity_item_id = @activity.id
-       # @activity.save
-
-
-    #   names = params["activity_names"].map { |an| an }
-    #   items = {}
-    #   names.each do |n|
-    #    ActivityItem.where(activity_name: n).each do |ai|
-    #     items[:activity] = n
-    #     items[:item]= ai.item_name
-    #     puts ai.item_name
-    #   end
-    # end
-       @trip.save
+   
      end
+   else
 
     if @trip.save
       redirect_to trip_path(@trip)
@@ -66,7 +52,7 @@ class TripsController < ApplicationController
       redirect_to root_path
     end
   end
-
+end
 
 
   def activity_items_trip

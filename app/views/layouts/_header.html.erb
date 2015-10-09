@@ -16,12 +16,44 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "MY CALENDAR", calendar_path %></li>
-            <li><%= link_to "MY TRIPS", trips_path %></li>
-            <li><%= link_to "CURRENCY CONVERTER", currency_path %></li>
-            <li><%= link_to "TRAVEL BLOG", blog_path %></li>
-            <li><%= link_to "ACCOUNT SETTINGS", edit_user_registration_path %></li>
-            <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
+            <li ><%= link_to "MY CALENDAR", calendar_path %></li>
+            <li ><%= link_to "MY TRIPS", trips_path %></li>
+            <li ><%= link_to "CURRENCY CONVERTER", currency_path %></li>
+            <li ><%= link_to "TRAVEL BLOG", blog_path %></li>
+
+
+    
+      <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown" style="height: 60px;">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <%- if current_user.image %>
+           <%= image_tag current_user.image, {style: "width: 40px; border-radius: 7px;"} %>
+           <b class="caret"></b>
+           <%- else %>
+            <%= image_tag 'default-profile-pic.png', {style: "width: 40px; border-radius: 7px;"} %>
+           <b class="caret"></b>
+           <%- end %>
+           </a>
+          <ul class="dropdown-menu">
+            <li align="center" class="well">
+                <h6><%= current_user.name %></h6>
+                <%- if current_user.provider == nil || current_user.uid == nil%>
+                   <h6>Signed in as <%=current_user.email %></h6>
+                <%- elsif current_user.provider == 'google_oauth2' %>
+                 <h6>Signed in with Google+</h6>
+                 <%- else %>
+                <h6>Signed in with <%= current_user.provider.capitalize %></h6>
+                <%- end %>
+              <%= link_to edit_user_registration_path, class: "btn btn-sm btn-default"  do%>
+              <span class="glyphicon glyphicon-lock"> Profile Settings</span>
+              <% end %>
+              <%= link_to destroy_user_session_path, class: "btn btn-sm btn-default", method: :delete do %>
+                <span class="glyphicon glyphicon-log-out"> Log Out </span>
+              <% end %>
+            </li>
+           </ul>
+        </li>
+      </ul>
             <% else %>
             <% end %>
           </ul>

@@ -272,7 +272,10 @@ Devise.setup do |config|
     info_fields: 'name,email'
   }
   config.omniauth :google_oauth2, Rails.application.secrets.google_api_key, Rails.application.secrets.google_api_secret
-  config.omniauth :linkedin, Rails.application.secrets.linkedin_api_key, Rails.application.secrets.linkedin_api_secret
+
+  config.omniauth :linkedin, Rails.application.secrets.linkedin_api_key, Rails.application.secrets.linkedin_api_secret, :fields => ["id", "email-address", "first-name", "last-name", "picture-url", "public-profile-url", "picture-urls::(original)"]
+
+
   config.omniauth :github, Rails.application.secrets.github_api_key, Rails.application.secrets.github_api_secret, :scope => 'user:email'
 
 
