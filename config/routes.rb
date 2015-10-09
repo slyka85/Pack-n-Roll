@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # match '/auth/:action/callback' => 'omniauth_callbacks#:action', via: [:get, :post] 
     # match '/auth/facebook/callback' => 'omniauth_callbacks#facebook', via: [:get, :post] 
-  # resources :users
+  resources :users
 
 
   get '/test_page' => 'test_page#index'
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
  # resources :users do
   resources :trips do
-    
+
     member do
       get :choose_activities
       put :update_activities
