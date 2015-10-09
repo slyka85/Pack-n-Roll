@@ -34,23 +34,26 @@ class TripsController < ApplicationController
       start_date: params["trip"]["start_date"],
       end_date: params["trip"]["end_date"],
       user_id: current_user.id)
+      @trip.save
       # activity_items_trips: params["activity"].permit(:activity_item_id))
 if params["activity_ids"]
 
     @activity_ids = params["activity_ids"].map { |aid| aid}
     @activity_ids.each do |aid|
       @trip.activity_items_trips.create(activity_item_id: aid)
-   
+   @trip.save
      end
-   else
+   #  redirect_to trip_path(@trip)
+   # else
 
+end
     if @trip.save
       redirect_to trip_path(@trip)
       # redirect_to trip_path(@trip, :activity => params[:activity_ids])
     else
       flash[:alert] = 'Please fill out all the fields to proceed'
       redirect_to root_path
-    end
+    # end
   end
 end
 

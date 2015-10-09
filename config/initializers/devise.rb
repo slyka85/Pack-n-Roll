@@ -265,20 +265,18 @@ Devise.setup do |config|
     config.secret_key = 'ead17f6169cf696777b2e57eaad5dd3bbea21fc85bd070cfcd8f7b0d085480fd849da4866af8a9b0f3a4e87e15a057d4c0b4c1e0e67859d0dc0a155572e02055'
 
 
-  config.omniauth :facebook, Rails.application.secrets.facebook_api_key, Rails.application.secrets.facebook_api_secret,
+  config.omniauth :facebook, Figaro.env.facebook_api_key, Figaro.env.facebook_api_secret,
   {
     scope: 'email,public_profile',
     image_size: 'large',
     info_fields: 'name,email'
   }
-  config.omniauth :google_oauth2, Rails.application.secrets.google_api_key, Rails.application.secrets.google_api_secret
+  config.omniauth :google_oauth2, Figaro.env.google_api_key, Figaro.env.google_api_secret
 
-  config.omniauth :linkedin, Rails.application.secrets.linkedin_api_key, Rails.application.secrets.linkedin_api_secret, :fields => ["id", "email-address", "first-name", "last-name", "picture-url", "public-profile-url", "picture-urls::(original)"]
-
-
-  config.omniauth :github, Rails.application.secrets.github_api_key, Rails.application.secrets.github_api_secret, :scope => 'user:email'
+  config.omniauth :linkedin, Figaro.env.linkedin_api_key, Figaro.env.linkedin_api_secret, :fields => ["id", "email-address", "first-name", "last-name", "picture-url", "public-profile-url", "picture-urls::(original)"]
 
 
+  config.omniauth :github, Figaro.env.github_api_key, Figaro.env.github_api_secret, :scope => 'user:email'
 
 
 end
