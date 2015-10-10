@@ -17,7 +17,7 @@ class TripsController < ApplicationController
   def new
     @trip = current_user.trips.new
     gon.ip = request.remote_ip
-    gon.ip_info_api_key =  ENV["ip_info_api_key"]
+    gon.ip_info_api_key =  Figaro.env.ip_info_api_key
   end
 
 
@@ -67,9 +67,9 @@ end
 
 
   def show
-
-    gon.weather_api_key = ENV["weather_api_key"]
-    gon.google_maps_api_key = ENV["google_maps_api_key"]
+binding.pry
+    gon.weather_api_key = Figaro.env.weather_api_key
+    gon.google_maps_api_key = Figaro.env.google_maps_api_key
 
 
     @trip = Trip.find(params[:id])
