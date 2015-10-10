@@ -402,9 +402,10 @@ infowindow.open(map,marker);
 
 
         function loadScript() {
+            var google_maps_api_key = gon.google_maps_api_key;
             var script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyD-7NSPt2Gzjn79uQ-NoKl7xGKc0oO4H54&sensor=false&callback=initialize';
+            script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&key='+google_maps_api_key+'&sensor=false&callback=initialize';
             document.body.appendChild(script);
         }
 
@@ -420,9 +421,10 @@ infowindow.open(map,marker);
             var country = query.shift();
 
             // $(".heading").append(city);
+            var weather_api_key = gon.weather_api_key;
 
             $.ajax({
-                url: '//api.wunderground.com/<%= ENV["WEATHER_API_KEY"] %>/forecast10day/q/' + lat_result + ',' + long_result + '.json',
+                url: '//api.wunderground.com/'+weather_api_key+'/forecast10day/q/' + lat_result + ',' + long_result + '.json',
                 dataType: "jsonp",
                 success: function(data) {
                     for (var i = 0; i < data.forecast.txt_forecast.forecastday.length; i++) {
@@ -446,8 +448,8 @@ infowindow.open(map,marker);
   window.onload = getCurrentLocation();
 function getCurrentLocation() {
  var user_ip = gon.ip;
- var apikey = "9ec04c68eba7c73852078ec8db83aea4b4a44537b05181023546ed701667f5af";
- var theURL = "//api.ipinfodb.com/v3/ip-city/?key=" + apikey + "&ip="+ user_ip+"&format=json&callback=?";
+ var ip_info_api_key = gon.ip_info_api_key;
+ var theURL = "//api.ipinfodb.com/v3/ip-city/?key=" + ip_info_api_key + "&ip="+ user_ip+"&format=json&callback=?";
 
  $.ajax({
         url: theURL,

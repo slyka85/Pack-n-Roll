@@ -17,6 +17,7 @@ class TripsController < ApplicationController
   def new
     @trip = current_user.trips.new
     gon.ip = request.remote_ip
+    gon.ip_info_api_key =  ENV["ip_info_api_key"]
   end
 
 
@@ -66,7 +67,8 @@ end
 
 
   def show
-  
+    gon.weather_api_key = ENV["weather_api_key"]
+    gon.google_maps_api_key = ENV["google_maps_api_key"]
 
 # @trip.activity_items_trips.each do |ait|
 #  activity = ait.activity_item.activity_name
