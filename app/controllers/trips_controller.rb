@@ -67,21 +67,9 @@ end
 
 
   def show
+
     gon.weather_api_key = ENV["weather_api_key"]
     gon.google_maps_api_key = ENV["google_maps_api_key"]
-
-# @trip.activity_items_trips.each do |ait|
-#  activity = ait.activity_item.activity_name
-#  puts activity
-#  ActivityItem.where(activity_name: activity).each do |i|
-#   puts i.item_name
-#   end
-# end
-
-
-
-
-
 
 
     @trip = Trip.find(params[:id])
