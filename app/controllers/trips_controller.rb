@@ -29,7 +29,7 @@ class TripsController < ApplicationController
 
 
   def create
-    binding.pry
+    # binding.pry
       @trip = current_user.trips.create(
       destination: params["trip"]["destination"],
       current_location: params["trip"]["current_location"],

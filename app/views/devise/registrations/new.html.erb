@@ -23,14 +23,15 @@
     <div class="omb_login">
 <center>
     <div class="row omb_row-sm-offset-3 omb_socialButtons">
-    <div class="text-center">
-   
+    <div class="text-center" style="width: 280px;">
+     <h5 class="text-center">One-click Sign In</h5>
          
      <%- if devise_mapping.omniauthable? %>
       <%- resource_class.omniauth_providers.each do |provider| %>
-       <br>
-        <%= link_to image_tag( "#{provider}.png", class: "social-buttons" ), user_omniauth_authorize_path(provider) %>
-    
+
+ <a href="/users/auth/<%=provider%>" class="btn btn-block btn-social btn-<%=provider%>" id="home">
+    <i class="fa fa-<%=provider%>"></i> Sign in with <%=provider.capitalize%>
+  </a>
       <% end -%>
     <% end -%>
         
@@ -77,17 +78,20 @@
 
     <div class="omb_login">
 
+<center>
     <div class="row omb_row-sm-offset-3 omb_socialButtons">
-    <div class="text-center">
+    <div class="text-center" style="width: 280px;">
+     <h5 class="text-center">One-click Sign Up</h5>
          
      <%- if devise_mapping.omniauthable? %>
       <%- resource_class.omniauth_providers.each do |provider| %>
-       <br>
-        <%= link_to image_tag( "#{provider}.png", class: "social-buttons" ), user_omniauth_authorize_path(provider) %>
-         
+
+ <a href="/users/auth/<%=provider%>" class="btn btn-block btn-social btn-<%=provider%>" id="home">
+    <i class="fa fa-<%=provider%>"></i> Sign up with <%=provider.capitalize%>
+  </a>
       <% end -%>
     <% end -%>
-         
+        
           </div>
     </div>
      <div class="row omb_row-sm-offset-3 omb_loginOr">
@@ -126,6 +130,7 @@
     
           <br>
       </div>
+      </center>
     </div>
       </div>
     </div>

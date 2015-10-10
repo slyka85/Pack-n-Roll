@@ -39,8 +39,6 @@
                 <h6><%= current_user.name %></h6>
                 <%- if current_user.provider == nil || current_user.uid == nil%>
                    <h6><i class="fa fa-user"></i> Signed in as <%=current_user.email %></h6>
-                <%- elsif current_user.provider == 'google_oauth2' %>
-                 <h6><i class="fa fa-user"></i>  Signed in with Google+</h6>
                  <%- else %>
                 <h6><i class="fa fa-user"></i> Signed in with <%= current_user.provider.capitalize %></h6>
                 <%- end %>
