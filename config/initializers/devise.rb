@@ -272,8 +272,7 @@ Devise.setup do |config|
     info_fields: 'name,email'
   }
   config.omniauth :google_oauth2, Figaro.env.google_api_key, Figaro.env.google_api_secret, {
-    name: 'google',
-    redirect_uri: 'http://ef5a17ea.ngrok.io/users/auth/google/callback'
+    name: 'google'
   }
 
   config.omniauth :linkedin, Figaro.env.linkedin_api_key, Figaro.env.linkedin_api_secret, :fields => ["id", "email-address", "first-name", "last-name", "picture-url", "public-profile-url", "picture-urls::(original)"]
