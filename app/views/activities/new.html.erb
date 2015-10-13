@@ -1,0 +1,9 @@
+<div class="content">
+  <%= form_for('', url: trip_activities_path(trip_id: @trip.id)) do %>
+    <label><input type="checkbox" name="activities[]" id="" value="hiking"> Hiking</label> <br>
+    <label><input type="checkbox" name="activities[]" id="" value="swmming"> Swmming</label> <br>
+    <label><input type="checkbox" name="activities[]" id="" value="camping"> Camping</label> <br>
+
+    <button>Send</button>
+  <% end %>
+</div>

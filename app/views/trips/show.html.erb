@@ -1,5 +1,9 @@
 <div class="content">
 <% content_for(:page_title) { 'Your Trip' } %>
+
+<%= debug("Your activities: #{@trip.activities.pluck(:name).to_sentence}") %>
+<%= link_to 'Add activities', new_trip_activity_path(@trip) %>
+
 <div class="notPrint">
   <div class="row">
     <div class="jumbotron text-center">
@@ -17,11 +21,11 @@
 
 
    <%= render 'weather_map' %>
-       <br> <br> 
+       <br> <br>
  <div class ="row">
 
          <h3 class="text-center">YOUR ACTIVITIES:</h3>
-           
+
           <%  @trip.activity_items_trips.each do |ait| %>
 
           <legend>
@@ -44,7 +48,7 @@
           </div>
           </div>
            <% end %>
- 
+
        </div>
 
          <h3 class="text-center">SUGGESTED ITEMS:</h3>

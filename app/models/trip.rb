@@ -1,6 +1,7 @@
 class Trip < ActiveRecord::Base
 
 	validates_presence_of :current_location, :destination, :start_date, :end_date
+  has_many :activities
 	has_many :trip_default_items
 	has_many :activity_items_trips
 	has_many :activity_items, through: :activity_items_trips

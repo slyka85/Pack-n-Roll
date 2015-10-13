@@ -3,7 +3,7 @@ class TripsController < ApplicationController
 
   def index
     @trips = current_user.trips.where(:user_id == current_user.id)
-    @trips_by_date = current_user.trips.group_by{|x| x.start_date.to_date} 
+    @trips_by_date = current_user.trips.group_by{|x| x.start_date.to_date}
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     # @color = "#" + "%06x" % (rand * 0xffffff)
     # @colors = ["#EC407A", "#009688", "#795548", "#9575CD"]
@@ -67,7 +67,6 @@ end
 
 
   def show
-binding.pry
     gon.weather_api_key = Figaro.env.weather_api_key
     gon.google_maps_api_key = Figaro.env.google_maps_api_key
 
