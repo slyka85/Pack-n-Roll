@@ -46,5 +46,7 @@ gem 'omniauth-linkedin'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
+gem 'rspec-rails', '~> 3.0'
+gem 'factory_girl_rails'
 
 

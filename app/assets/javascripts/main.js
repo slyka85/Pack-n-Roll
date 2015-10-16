@@ -15,6 +15,8 @@ $(function() {
     });
 
 
+
+
 ////////////////////////////     MINI CALENDAR     /////////////////////////////
 
     var calendarData = $("#calendar").data("events");
@@ -34,7 +36,7 @@ $(function() {
         // eventColor: randomColor,
         events: '/trips.json',
         dayClick: function(date, jsEvent, view) {
-            console.log(date);
+            // console.log(date);
             var date = $(this).data("date");
         }
     });
@@ -108,7 +110,7 @@ $(function() {
         $("#allCategories").css('display', 'block');
         // $(this).toggleClass('highlight');
         var category = $(this).html();
-        console.log(category);
+        // console.log(category);
         $("#allCategories").children().fadeOut();
         $("#allCategories").children().each(function() {
             if ($(this).hasClass(category)) {
@@ -129,7 +131,7 @@ $(function() {
     ////////////////////////////////////// SELECT TILES and CHOOSE ACTIVITIES //////////////////////////
 
     $(".all_thumbs .thumbnail").click(function() {
-        console.log(this);
+        // console.log(this);
         $(this).toggleClass('highlight');
         if($(this).css('opacity') == 1){
                      // $(".thumbnail").wrap("<strike>");
@@ -165,13 +167,13 @@ $(function() {
                     q: request.term
                 },
                 success: function(data) {
-                    console.log(data)
+                    // console.log(data)
                     if (data == "") {
                         $('.flash').delay(300).fadeIn('normal', function() {
                             $(this).delay(2500).fadeOut('normal');
                         });
                     } else {
-                        console.log("found")
+                        // console.log("found")
                     }
                     response(data);
                 }
@@ -263,33 +265,36 @@ $(function() {
             var latlong = [];
             var query = $("#query").text().split(', ');
             var city = query.shift();
-            var state = query.shift();
-            var country = query.shift();
+            // var state = query.shift();
+            // var country = query.shift();
             var results;
             var geocoder = new google.maps.Geocoder();
-            var location = city;
+            var destination = city;
+
             var cur_loc = $("#cur_loc").text().split(', ');
             var cur_city = cur_loc.shift();
+
             var cur_location = cur_city;
 
 
             var cur_lat;
             var cur_long;
-            var lat_result;
-            var long_result;
+            var dest_lat;
+            var dest_long;
 
             geocoder.geocode({
-                'address': location
+                'address': destination
             }, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     // map.setCenter(results[0].geometry.location);
-                    lat_result = results[0].geometry.location.lat();
-                    console.log(lat_result);
-                    long_result = results[0].geometry.location.lng();
-                    console.log(long_result);
-                    latlong = lat_result + ", " + long_result;
-                    weather(lat_result, long_result);
-                    markers(lat_result, long_result);
+                    dest_lat = results[0].geometry.location.lat();
+                    // console.log(dest_lat);
+                    dest_long = results[0].geometry.location.lng();
+                    // console.log(dest_long);
+                    latlong = dest_lat + ", " + dest_long;
+                    weather(dest_lat, dest_long);
+                    markers(dest_lat, dest_long);
+               
                 } else {
                     alert("Something got wrong " + status);
                 }
@@ -302,11 +307,12 @@ $(function() {
                 if (status == google.maps.GeocoderStatus.OK) {
                     // map.setCenter(results[0].geometry.location);
                     cur_lat = results[0].geometry.location.lat();
-                    console.log(cur_lat);
+                    // console.log(cur_lat);
                     cur_long = results[0].geometry.location.lng();
-                    console.log(cur_long);
+                    // console.log(cur_long);
                     cur_latlong = cur_lat + ", " + cur_long;
                     markers(cur_lat, cur_long);
+                    localTime(cur_lat, cur_long);
                 } else {
                     alert("Something got wrong " + status);
                 }
@@ -368,12 +374,12 @@ $(function() {
 
 
 function markers(lat_result, long_result) {
+
 var myCenter = new google.maps.LatLng(lat_result, long_result);
     var marker = new google.maps.Marker({
     position: myCenter,
      animation:google.maps.Animation.BOUNCE,
-    map: map,
-    title: 'Hello World!'
+    map: map
   });
 
 google.maps.event.addListener(marker,'click',function() {
@@ -381,11 +387,17 @@ google.maps.event.addListener(marker,'click',function() {
   map.setCenter(marker.getPosition());
   });
 
-    var infowindow = new google.maps.InfoWindow({
-  content:"Hello World!"
-  });
-
+function infobox(current_time) {
+   var infowindow = new google.maps.InfoWindow({
+    content: "hi"
+   });
+   
 infowindow.open(map,marker);
+  infowindow.setContent(current_time);
+}
+
+
+
 
 // google.maps.event.addListener(map,'center_changed',function() {
 
@@ -395,10 +407,39 @@ infowindow.open(map,marker);
 //   },3000);
 //   });
 
+////////////////////////////// GET CURRENT TIME /////////////////////////
+ $(window).load(localTime());
+ function localTime(cur_lat, cur_long) {
+var api_key = '5W9OTHLMLM8G';
+var time_url = 'http://api.timezonedb.com/?lat='+cur_lat+'&lng='+cur_long+'&format=json&key=5W9OTHLMLM8G';
+
+ $.ajax({
+        url: time_url,
+        dataType: "jsonp",
+        method: 'GET',
+        success: function(data) {
+        var unix_timestamp = data.timestamp;
+        // console.log(data);
+          
+var current_time = moment.unix(unix_timestamp).utc().format('YYYY-MM-DD HH:mm:ss');
+console.log(current_time)
+  infobox(current_time);
+
+        } // end of success
+    }); //end of ajax
+
+}; // end of local time function
+
+//////////////////////////////////////////////////////////////////////////////////
+
 }// end of markers function
 
 
+
+
         }// end of initialize
+
+
 
 
         function loadScript() {
@@ -460,7 +501,7 @@ function getCurrentLocation() {
         var cur_city = data.cityName;
         var cur_region = data.regionName;
         var cur_country = data.countryName;
-        console.log(cur_city, cur_region, cur_country);
+        // console.log(cur_city, cur_region, cur_country);
         $('#query').val(cur_city + ", " + cur_region + ", " + cur_country);
         }
     });

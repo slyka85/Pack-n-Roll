@@ -1,10 +1,10 @@
 <div class="col-md-3 trip_information">
   <h4> YOUR TRIP INFORMATION </h4>
   <h4 style="display:inline">FROM: &nbsp;</h4>
-  <h5  id="cur_loc" style="display:inline"><%=@trip.current_location%> &nbsp;</h5>
+  <h5  id="cur_loc" style="display:inline"><%=truncate (@trip.current_location)%> &nbsp;</h5>
   <br>
   <h4 style="display:inline">TO: &nbsp;</h4>
-  <h5  id="query" style="display:inline"><%=@trip.destination%> &nbsp;</h5>
+  <h5  id="query" style="display:inline"><%=truncate(@trip.destination)%> &nbsp;</h5>
   <br>
   <h4 style="display:inline">Start Date: &nbsp; &nbsp; </h4>
   <h5 style="display:inline"><%=@trip.start_date %></h5>

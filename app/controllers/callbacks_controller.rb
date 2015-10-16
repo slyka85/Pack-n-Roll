@@ -6,7 +6,6 @@ class CallbacksController < Devise::OmniauthCallbacksController
       flash.notice = "Welcome to Travel Packing Assistant! Fill out the trip information below and choose activities."
     sign_in_and_redirect @user
   else
-    # binding.pry
     redirect_to new_user_registration_url
   end
   end

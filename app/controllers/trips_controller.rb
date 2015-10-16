@@ -22,7 +22,6 @@ class TripsController < ApplicationController
 
 
   def update_default_items
-    # binding.pry
     @trip = current_user.trips.find(params[:id])
     @trip.update_attributes!(trip_default_items_attributes: params[:trip][:trip_default_items])
     redirect_to @trip
@@ -30,7 +29,6 @@ class TripsController < ApplicationController
 
 
   def create
-    # binding.pry
       @trip = current_user.trips.create(
       destination: params["trip"]["destination"],
       current_location: params["trip"]["current_location"],
@@ -67,7 +65,7 @@ end
 
 
   def show
-binding.pry
+
     gon.weather_api_key = Figaro.env.weather_api_key
     gon.google_maps_api_key = Figaro.env.google_maps_api_key
 

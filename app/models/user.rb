@@ -25,7 +25,6 @@ class User < ActiveRecord::Base
 
   def self.new_with_session(params, session)
   	if session["devise.user_attributes"]
-      binding.pry
   		new(session["devise.user_attributes"], without_protection: true) do |user|
   			user_attributes = params
   			user.valid?
