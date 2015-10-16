@@ -16,7 +16,6 @@ $(function() {
 
 
 
-
 ////////////////////////////     MINI CALENDAR     /////////////////////////////
 
     var calendarData = $("#calendar").data("events");
@@ -307,9 +306,9 @@ $(function() {
                 if (status == google.maps.GeocoderStatus.OK) {
                     // map.setCenter(results[0].geometry.location);
                     cur_lat = results[0].geometry.location.lat();
-                    // console.log(cur_lat);
+                    console.log("lat "+ cur_lat);
                     cur_long = results[0].geometry.location.lng();
-                    // console.log(cur_long);
+                    console.log("long"+ cur_long);
                     cur_latlong = cur_lat + ", " + cur_long;
                     markers(cur_lat, cur_long);
                     localTime(cur_lat, cur_long);
@@ -388,12 +387,13 @@ google.maps.event.addListener(marker,'click',function() {
   });
 
 function infobox(current_time) {
+    console.log("current time "+ current_time)
    var infowindow = new google.maps.InfoWindow({
     content: "hi"
    });
    
 infowindow.open(map,marker);
-  infowindow.setContent(current_time);
+  // infowindow.setContent(current_time);
 }
 
 
@@ -407,11 +407,19 @@ infowindow.open(map,marker);
 //   },3000);
 //   });
 
+
+
+}// end of markers function
+
+        }// end of initialize
+
+
+
 ////////////////////////////// GET CURRENT TIME /////////////////////////
- $(window).load(localTime());
+
  function localTime(cur_lat, cur_long) {
 var api_key = '5W9OTHLMLM8G';
-var time_url = 'http://api.timezonedb.com/?lat='+cur_lat+'&lng='+cur_long+'&format=json&key=5W9OTHLMLM8G';
+var time_url = 'http://api.timezonedb.com/?lat='+cur_lat+'&lng='+cur_long+'&format=json&key='+api_key;
 
  $.ajax({
         url: time_url,
@@ -419,11 +427,11 @@ var time_url = 'http://api.timezonedb.com/?lat='+cur_lat+'&lng='+cur_long+'&form
         method: 'GET',
         success: function(data) {
         var unix_timestamp = data.timestamp;
-        // console.log(data);
+         console.log(data);
           
 var current_time = moment.unix(unix_timestamp).utc().format('YYYY-MM-DD HH:mm:ss');
-console.log(current_time)
-  infobox(current_time);
+// console.log(current_time)
+
 
         } // end of success
     }); //end of ajax
@@ -431,15 +439,6 @@ console.log(current_time)
 }; // end of local time function
 
 //////////////////////////////////////////////////////////////////////////////////
-
-}// end of markers function
-
-
-
-
-        }// end of initialize
-
-
 
 
         function loadScript() {
@@ -453,9 +452,9 @@ console.log(current_time)
         window.onload = loadScript();
 
 
-        function weather(lat_result, long_result) {
-            var lat_result = lat_result;
-            var long_result = long_result;
+        function weather(dest_lat, dest_long) {
+            // var lat_result = lat_result;
+            // var long_result = long_result;
             var query = $("#query").text().split(', ');
 
             var city = query.shift();
@@ -465,7 +464,7 @@ console.log(current_time)
             var weather_api_key = gon.weather_api_key;
 
             $.ajax({
-                url: '//api.wunderground.com/'+weather_api_key+'/forecast10day/q/' + lat_result + ',' + long_result + '.json',
+                url: '//api.wunderground.com/api/'+weather_api_key+'/forecast10day/q/' + dest_lat + ',' + dest_long + '.json',
                 dataType: "jsonp",
                 success: function(data) {
                     for (var i = 0; i < data.forecast.txt_forecast.forecastday.length; i++) {
