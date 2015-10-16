@@ -1,3 +1,4 @@
+Live app https://rocky-ocean-7515.herokuapp.com
 ###INSTRUCTIONS TO TEST THE APP
 ___
 - **rails s** -> to run the server
