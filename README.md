@@ -1,12 +1,13 @@
-Live app https://rocky-ocean-7515.herokuapp.com
+LIVE APP at https://rocky-ocean-7515.herokuapp.com
+___
+
 ###INSTRUCTIONS TO TEST THE APP
 ___
+-  clone repo
 - **rails s** -> to run the server
 - **localhost:3000**
 - **rake db:seed** -> to populate the database
-- **log in as a guest** ->
-username: guest@fakemail.com,
-password: guestpassword
+
 
 ### APP FEATURES
 - User can create a personal account (sign up / log in)
