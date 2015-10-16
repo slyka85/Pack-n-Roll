@@ -4,9 +4,10 @@ ___
 ###INSTRUCTIONS TO TEST THE APP
 ___
 -  clone repo
+- **rake db:seed** -> to populate the database
 - **rails s** -> to run the server
 - **localhost:3000**
-- **rake db:seed** -> to populate the database
+
 
 
 ### APP FEATURES
