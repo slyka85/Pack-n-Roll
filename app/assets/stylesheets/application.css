@@ -281,7 +281,7 @@ li.checked:before {
 }
 
 .all_thumbs .thumbnail {
-  background: #ff5252 !important;
+  background: rgba(255,23,68 ,0.8) !important;
   color: white;
   position: relative;
   margin-bottom: 3px;
