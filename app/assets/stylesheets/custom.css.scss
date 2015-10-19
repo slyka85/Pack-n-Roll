@@ -1,13 +1,44 @@
-body {
-font-family: 'Raleway', cursive !important;
+
+    @font-face {
+        font-family: "Arual";
+        src: font-url('Arual.ttf') format('truetype');
+    }
+
+
+
+h1, h3 {
+	text-align: center;
+		margin: 40px;
 }
+h1 span{
+	background-color: rgba(224,247,250 ,0.9);
+
+	font-family: "Arual";
+	padding: 30px 60px 10px 60px;
+	color: #26ccce;
+	margin: 40px;
+}
+
+
+h4 span {
+	margin: 40px;
+	font-family: Helvetica;
+	background-color: rgba(224,247,250 ,0.9);
+	padding: 10px 50px 10px 50px;
+	color: #37474F;
+}
+
+
+/*body {
+font-family: 'Raleway', cursive !important;
+}*/
 /*
 h1, h2, h3 ,h4 {
 font-family: 'Raleway', cursive !important;
 }*/
 
-.btn-primary {
+/*.btn-primary {
   color: #fff;
   background-color: #42CAAB !important;
   border-color: #357ebd;
-}
+}*/

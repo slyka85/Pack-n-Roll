@@ -642,7 +642,7 @@ ul.navbar-nav li, .navbar-header {
     position: relative;
     width: 100%;
     height: 100%;
-    background: url('/assets/bg.jpg') no-repeat center center scroll;
+    background: url('/assets/suitcase-background.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -663,12 +663,12 @@ ul.navbar-nav li, .navbar-header {
 .btn-dark {
     border-radius: 0;
     color: white;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #26ccce;
 }
 
 .btn-dark:hover,
 .btn-dark:focus,
 .btn-dark:active {
     color: white !important;
-    background-color: rgba(0,0,0,0.7);
+    background-color: #22a8aa;
 }
