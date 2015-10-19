@@ -13,7 +13,7 @@
       <% if @trips_by_date[date] %>
       <ul>
         <% @trips_by_date[date].each do |trip| %>
-        <li><%= link_to trip.destination, trip %></li>
+        <li><h6><%= link_to trip.destination, trip %></h6></li>
         <% end %>
       </ul>
       <% end %>
