@@ -51,6 +51,7 @@ $.getJSON(
     // YOUR CODE HERE
 
 from_currency = $( "#from_currency option:selected" ).val();
+from_currency_text =  $( "#from_currency option:selected" ).text();
 console.log(from_currency)
 
 my_base=from_currency;
@@ -58,8 +59,8 @@ amount = $(".amount").val();
 console.log(amount)
 
 // set currency to convert to
-to_currency = $( "#to_currency option:selected" ).val();
-my_destination = to_currency;
+to_currency_text = $( "#to_currency option:selected" ).text();
+my_destination = $( "#to_currency option:selected" ).val();
 console.log(my_destination)
 
 // base amount to convert
@@ -69,10 +70,11 @@ console.log(my_destination)
 
 
 converted_amount=(amount/data.rates[my_base])*data.rates[my_destination];
+result_text = amount + " " + from_currency_text + " = " + converted_amount + " " +to_currency_text;
 
 console.log(converted_amount);
 
-$(".currency_result").append('<div></div>').html(converted_amount)
+$(".currency_result").append('<div></div>').html(result_text)
 
 
       }); //end of json ajax
