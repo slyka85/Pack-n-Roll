@@ -506,4 +506,45 @@ function getCurrentLocation() {
     });
 }
 
+
+
+
+
+    // $(".currency").autocomplete({
+    //     autoFocus: true,
+    //     source: function(request, response) {
+    //         $.ajax({
+    //             url: 'http://openexchangerates.org/currencies.json',
+    //             dataType: "jsonp",
+    //             data: {
+    //                 q: request.term
+    //             },
+    //             success: function(data) {
+    //                 // console.log(data)
+    //                 if (data == "") {
+    //                     $('.flash').delay(300).fadeIn('normal', function() {
+    //                         $(this).delay(2500).fadeOut('normal');
+    //                     });
+    //                 } else {
+    //                     // console.log("found")
+    //                 }
+    //                 response(data);
+    //             }
+    //         });
+    //     },
+    //     minLength: 3
+    // });
+
+
+// $.getJSON("http://openexchangerates.org/currencies.json", function (data) {
+//     console.log(data)
+//      $.each(data, function (index, item) {
+//          $('.currency').append(
+//               $('<option></option>').val(item).html(item)
+//           );
+//      });
+//  });
+
+
+
 }); //end of ready function
