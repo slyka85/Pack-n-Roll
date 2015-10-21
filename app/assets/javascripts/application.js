@@ -20,7 +20,7 @@
 //= require_tree .
 
 
-$.getJSON("http://openexchangerates.org/currencies.json", function (data) {
+$.getJSON("//openexchangerates.org/currencies.json", function (data) {
     console.log(data)
      $.each(data, function (index, item) {
          $('.currency').append(
@@ -35,7 +35,7 @@ $.getJSON("http://openexchangerates.org/currencies.json", function (data) {
 
 $.getJSON(
     // NB: using Open Exchange Rates here, but you can use any source!
-    'http://openexchangerates.org/api/latest.json?app_id=94dd428fd2fc46f1accbd2f404239e83', function(data) {
+    '//openexchangerates.org/api/latest.json?app_id=94dd428fd2fc46f1accbd2f404239e83', function(data) {
     // Check money.js has finished loading:
     console.log(data.rates)
     if (typeof fx !== "undefined" && fx.rates) {
