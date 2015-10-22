@@ -1,22 +1,42 @@
 <div class="content">
 
-<h3>CHOOSE CURRENCY TO CONVERT</h3>
+<h3>SELECT CURRENCY FROM OPTIONS BELOW</h3>
+<br><br>
+<center>
+<div class="mainselection">
 <select name="" id="from_currency" class="currency">
 	<option selected="selected" disabled="disabled">CONVERT FROM</option>
 </select>
-
-<label for="amount">AMOUNT</label>
+</div>
+</center>
+<br><br>
+<center class="amount-style">
+<label for="amount" >AMOUNT &nbsp; &nbsp;</label>
 <input type="text" class="amount" value="1">
+</center>
+<br><br>
 
 
+<center>
+<div class="mainselection">
 <select name="" id="to_currency" class="currency">
 <option selected="selected" disabled="disabled">CONVERT TO</option>
 </select>
+</div>
+</center>
 
-<button class="convert">CONVERT</button>
-<br>
-<label for="currency_result">RESULT</label>
-<div class="currency_result"></div>
+
+<div style="clear:both"></div>
+<br><br>
+
+<center>
+<button class="btn-currency convert">CONVERT</button>
+<br><br>
+
+<h3 class="currency_result"></h3>
+</center>
+
+
 
 
 </div>

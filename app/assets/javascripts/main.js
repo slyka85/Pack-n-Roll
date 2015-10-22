@@ -5,6 +5,20 @@ $(function() {
     
     $(".datepicker").datepicker({dateFormat: "yy-mm-dd"});
 
+///////////////////////  CURRENCY SELECT ////////////////
+// $(".currency").selectBoxIt();
+$.getJSON("//openexchangerates.org/currencies.json", function (data) {
+    console.log(data);
+     $.each(data, function (value, text) {
+        $("currency").data("selectBoxIt")
+         $('.currency').append(
+              $('<option></option>').val(value).html(text)
+          );
+     });
+ })
+
+
+
 
 
 /////////////////////       SIGN IN MODAL          ///////////////////

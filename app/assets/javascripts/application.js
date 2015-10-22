@@ -20,14 +20,20 @@
 //= require_tree .
 
 
-$.getJSON("//openexchangerates.org/currencies.json", function (data) {
-    console.log(data)
-     $.each(data, function (index, item) {
-         $('.currency').append(
-              $('<option></option>').val(index).html(item)
-          );
-     });
- });
+ // $(function() {
+  // $(".currency").selectBoxIt();
+  	// populate: function() {
+
+// $.getJSON("//openexchangerates.org/currencies.json", function (data) {
+//     console.log(data);
+//      $.each(data, function (index, item) {
+//          $('.currency').append(
+//               $('<option></option>').val(index).html(item)
+//           );
+//      });
+//  });
+// }
+
 
  	// $(".currency_result").remove()
 
@@ -46,22 +52,22 @@ $.getJSON(
         var fxSetup = {
             rates: data.rates,
             base: data.base
-        }
+        };
     }
     // YOUR CODE HERE
 
 from_currency = $( "#from_currency option:selected" ).val();
 from_currency_text =  $( "#from_currency option:selected" ).text();
-console.log(from_currency)
+console.log(from_currency);
 
 my_base=from_currency;
 amount = $(".amount").val();
-console.log(amount)
+console.log(amount);
 
 // set currency to convert to
 to_currency_text = $( "#to_currency option:selected" ).text();
 my_destination = $( "#to_currency option:selected" ).val();
-console.log(my_destination)
+console.log(my_destination);
 
 // base amount to convert
 
@@ -70,12 +76,14 @@ console.log(my_destination)
 
 
 converted_amount=(amount/data.rates[my_base])*data.rates[my_destination];
-result_text = amount + " " + from_currency_text + " = " + converted_amount + " " +to_currency_text;
+new_amount = Math.floor(converted_amount * 100) / 100;
+result_text = amount + " " + from_currency_text + " &#8776 " + new_amount + " " +to_currency_text;
 
 console.log(converted_amount);
 
-$(".currency_result").append('<div></div>').html(result_text)
+$(".currency_result").append('<h3></h3>').html(result_text);
 
 
       }); //end of json ajax
 });
+// });
