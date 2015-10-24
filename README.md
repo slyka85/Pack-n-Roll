@@ -9,7 +9,7 @@ ___
 - **rails s** -> to run the server
 - **localhost:3000**
 
-10 APIs integrated:
+### 10 APIs integrated:
 - Exchange Rates API (https://openexchangerates.org/)
 - Autocomplete City API (http://www.geobytes.com/free-ajax-cities-jsonp-api/)
 - Google Maps API (https://developers.google.com/maps/documentation/javascript/)
