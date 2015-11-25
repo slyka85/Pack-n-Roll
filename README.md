@@ -1,5 +1,5 @@
-###LIVE APP
-https://rocky-ocean-7515.herokuapp.com
+### APP LIVE
+https://pack-n-roll.herokuapp.com/
 ___
 
 ###INSTRUCTIONS TO TEST THE APP
@@ -9,7 +9,17 @@ ___
 - **rails s** -> to run the server
 - **localhost:3000**
 
-
+### 10 APIs integrated:
+- Exchange Rates API (https://openexchangerates.org/)
+- Autocomplete City API (http://www.geobytes.com/free-ajax-cities-jsonp-api/)
+- Google Maps API (https://developers.google.com/maps/documentation/javascript/)
+- TimeZoneDB API (https://timezonedb.com/api)
+- Weather Underground API (http://www.wunderground.com/weather/api/)
+- IP Address Geolocation API (http://www.ipinfodb.com/ip_location_api.php)
+- Facebook Oauth API (https://developers.facebook.com/docs/facebook-login)
+- Google Oauth API (https://developers.google.com/identity/protocols/OAuth2)
+- Linkedin Oauth API (https://developer.linkedin.com/docs/oauth2)
+- Github Oauth API (https://developer.github.com/v3/oauth/)
 
 ### APP FEATURES
 - User can create a personal account (sign up / log in)
