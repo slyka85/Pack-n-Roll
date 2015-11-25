@@ -7,6 +7,9 @@ font-family: 'Raleway', cursive;
   width: 80%;
   margin: 0 auto;
   height: 80%;
+  -webkit-box-shadow: 19px 5px 47px -6px rgba(0,0,0,0.78);
+-moz-box-shadow: 19px 5px 47px -6px rgba(0,0,0,0.78);
+box-shadow: 19px 5px 47px -6px rgba(0,0,0,0.78);
 
   td, th {
    font-family: 'Raleway', cursive;
@@ -60,4 +63,10 @@ a {
 h6 a {
   color: tomato;
   font-size: 12px;
+}
+
+.fc-view-container {
+  -webkit-box-shadow: -3px 5px 52px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: -3px 5px 52px -1px rgba(0,0,0,0.75);
+box-shadow: -3px 5px 52px -1px rgba(0,0,0,0.75);
 }

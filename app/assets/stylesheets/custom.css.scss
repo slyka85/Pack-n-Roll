@@ -1,10 +1,4 @@
 
-    @font-face {
-        font-family: "Arual";
-        src: font-url('Arual.ttf') format('truetype');
-    }
-
-
 
 h1, h3 {
 	text-align: center;
@@ -50,4 +44,9 @@ font-family: 'Raleway', cursive !important;
 }
 .ui-datepicker-week-end {
 	color: tomato;
+}
+
+#allCategories {
+
+	display: flex;
 }

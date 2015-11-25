@@ -2,7 +2,7 @@
     <% content_for(:page_title) { 'Create your trip!' } %>
         <% if current_user %>
             <div class="jumbotron text-center" style="margin-bottom: 0px;">
-                <h3>Let's add your trip first</h3>
+                <h3>CREATE A TRIP</h3>
                 <h5>Fill out the fields below, then choose activities and click NEXT to get the suggested Packing List</h5>
             </div>
             <hr>
@@ -45,7 +45,7 @@
             <div class="all_thumbs" id="showToiletries">
                    <% activities = ActivityItem.all.group_by{|ait| ait.activity_name } %>
                     <% activities.each do |activity_name, activity_item| %>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6 col-md-4">
                         <div class="thumbnail btn activities">
                             <%=fields_for "activity_item[]", activity_item do |ff| %>
                                 <label>

@@ -283,7 +283,9 @@ li.checked:before {
 .all_thumbs .thumbnail {
   background: rgba(255,23,68 ,0.8) !important;
   color: white;
-  position: relative;
+  height: 90%;
+  width: 100%;
+/*  position: relative;*/
   margin-bottom: 3px;
 }
 .all_thumbs .thumbnail.highlight {
@@ -292,9 +294,13 @@ li.checked:before {
   color: black !important;
 
 }
+
+.thumbnail label {
+  font-size: 12px;
+}
 #allCategories {
   display: block;
-  padding-bottom: 70px;
+  padding: 10px 10px 70px 10px;
   overflow: hidden;
   /*  height: 500px;*/
 }
@@ -539,11 +545,7 @@ left: 63px;
     For .omb_spanOr use @body-bg instead of white.
 */
 
-@media (min-width: 768px) {
-    .omb_row-sm-offset-3 div:first-child[class*="col-"] {
-        margin-left: 25%;
-    }
-}
+
 
 .omb_login .omb_authTitle {
     text-align: center;
@@ -597,12 +599,7 @@ left: 63px;
 }
 
   
-@media (min-width: 768px) {
-    .omb_login .omb_forgotPwd {
-        text-align: right;
-    margin-top:10px;
-  }   
-}
+
 
 .social-buttons {
   height: 40px;
@@ -690,15 +687,15 @@ ul.navbar-nav li, .navbar-header {
 .mainselection {
    overflow:hidden;
    width:350px;
-   -moz-border-radius: 9px 9px 9px 9px;
-   -webkit-border-radius: 9px 9px 9px 9px;
-   border-radius: 9px 9px 9px 9px;
+   -moz-border-radius: 5px ;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
    box-shadow: 1px 1px 11px #330033;
    background: #4DB6AC url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
 }
 
 .btn-currency {
-   border-radius: 9px 9px 9px 9px;
+   border-radius: 6px;
    box-shadow: 1px 1px 11px #330033;
    width:150px;
   background-color: hsl(164, 0%, 5%) !important;

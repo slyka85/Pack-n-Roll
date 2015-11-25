@@ -20,22 +20,7 @@
 //= require_tree .
 
 
- // $(function() {
-  // $(".currency").selectBoxIt();
-  	// populate: function() {
 
-// $.getJSON("//openexchangerates.org/currencies.json", function (data) {
-//     console.log(data);
-//      $.each(data, function (index, item) {
-//          $('.currency').append(
-//               $('<option></option>').val(index).html(item)
-//           );
-//      });
-//  });
-// }
-
-
- 	// $(".currency_result").remove()
 
  $(".convert").click(function() {
 
@@ -86,4 +71,3 @@ $(".currency_result").append('<h3></h3>').html(result_text);
 
       }); //end of json ajax
 });
-// });

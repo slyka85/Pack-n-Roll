@@ -1,0 +1,39 @@
+@media screen and (min-width: 420px){
+	.thumbnail label {
+  font-size: 14px;
+}
+}
+
+
+@media screen and (min-width: 768px){
+	.thumbnail label {
+  	font-size: 10px;
+}
+  .omb_row-sm-offset-3 div:first-child[class*="col-"] {
+   margin-left: 25%;
+    }
+  .omb_login .omb_forgotPwd {
+    text-align: right;
+    margin-top:10px;
+  }   
+
+  ul.nav.navbar-nav.navbar-right li a {
+  	font-size: 11px !important;
+  }
+	}
+
+
+@media screen and (min-width: 1000px){
+	.thumbnail label {
+  font-size: 10px;
+}
+  ul.nav.navbar-nav.navbar-right li a {
+  	font-size: 15px !important;
+  }
+	}
+
+	@media screen and (min-width: 1200px){
+	.thumbnail label {
+  font-size: 12px;
+}
+	}
